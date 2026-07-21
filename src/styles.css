@@ -88,4 +88,18 @@
         content: "⎇ ";
         color: var(--color-dim);
     }
+
+    .mobile-nav-scroll {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .mobile-nav-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .diff-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }

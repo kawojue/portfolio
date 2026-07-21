@@ -41,7 +41,7 @@ export function AboutSection() {
             <SectionPrompt command="cat about.md" />
             <h1
                 id="about-heading"
-                className="mb-3.5 font-mono text-[28px] font-semibold tracking-[-0.01em] text-text"
+                className="mb-3.5 font-mono text-2xl font-semibold tracking-[-0.01em] text-text sm:text-[28px]"
             >
                 {portfolio.headline}
             </h1>
@@ -72,30 +72,27 @@ export function ContactSection() {
             <p className="mb-3 max-w-[60ch] text-muted">
                 {portfolio.contact.body}
             </p>
-            <footer className="font-mono text-xs text-dim">
+            <footer className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-dim">
                 <a
                     href={portfolio.phone.href}
                     className="transition-colors hover:text-signal"
                 >
                     {portfolio.phone.label}
                 </a>
-                {" · "}
-                {portfolio.contact.links.map((link, index) => (
-                    <span key={link.href}>
-                        {index > 0 ? " · " : null}
-                        <a
-                            href={link.href}
-                            className="transition-colors hover:text-signal"
-                            {...(link.href.startsWith("http")
-                                ? {
-                                      target: "_blank",
-                                      rel: "noreferrer",
-                                  }
-                                : {})}
-                        >
-                            {link.label}
-                        </a>
-                    </span>
+                {portfolio.contact.links.map((link) => (
+                    <a
+                        key={link.href}
+                        href={link.href}
+                        className="transition-colors hover:text-signal"
+                        {...(link.href.startsWith("http")
+                            ? {
+                                  target: "_blank",
+                                  rel: "noreferrer",
+                              }
+                            : {})}
+                    >
+                        {link.label}
+                    </a>
                 ))}
             </footer>
         </section>

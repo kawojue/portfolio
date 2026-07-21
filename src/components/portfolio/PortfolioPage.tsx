@@ -21,10 +21,10 @@ export function PortfolioPage() {
                 Skip to content
             </a>
 
-            <div className="mx-auto grid min-h-screen max-w-[1180px] grid-cols-1 pb-[26px] min-[821px]:grid-cols-[260px_1fr]">
+            <div className="mx-auto grid min-h-screen max-w-[1180px] grid-cols-1 min-[821px]:grid-cols-[260px_1fr]">
                 <Sidebar activeId={activeId} />
 
-                <main className="min-w-0 px-6 py-10 pb-24 min-[821px]:px-10 min-[821px]:py-11">
+                <main className="min-w-0 px-4 py-8 pb-20 sm:px-6 sm:py-10 min-[821px]:px-10 min-[821px]:py-11">
                     <AboutSection />
 
                     <div>
