@@ -1,11 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/')({ component: Home })
+import { PortfolioPage } from "#/components/portfolio/PortfolioPage";
 
-function Home() {
-  return (
-    <main className="flex min-h-screen items-center justify-center p-8">
-      <h1 className="text-3xl font-semibold tracking-tight">Portfolio</h1>
-    </main>
-  )
-}
+export const Route = createFileRoute("/")({ component: PortfolioPage });

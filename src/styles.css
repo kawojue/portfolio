@@ -1,1 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 @import "tailwindcss";
+
+@theme {
+    --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    --color-bg: #101214;
+    --color-surface: #16191c;
+    --color-surface-2: #1c2024;
+    --color-line: #24292d;
+    --color-text: #e6e8ea;
+    --color-muted: #7c8489;
+    --color-dim: #4b5257;
+    --color-signal: #5eead4;
+    --color-amber: #f0a860;
+    --color-diff-rem: #d47575;
+    --color-selection-fg: #0a0f0f;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    ::selection {
+        background: var(--color-signal);
+        color: var(--color-selection-fg);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: 1px solid var(--color-signal);
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    .tree-item {
+        display: block;
+        padding: 5px 0 5px 14px;
+        color: var(--color-muted);
+        border-left: 1px solid var(--color-line);
+        font-family: var(--font-mono);
+        font-size: 13px;
+        transition:
+            color 120ms ease,
+            border-color 120ms ease;
+    }
+
+    .tree-item:hover,
+    .tree-item[data-active="true"] {
+        color: var(--color-signal);
+        border-left-color: var(--color-signal);
+    }
+
+    .tree-item[data-dir="true"] {
+        color: var(--color-text);
+        font-weight: 500;
+        padding-top: 16px;
+        pointer-events: none;
+    }
+
+    .tree-item[data-dir="true"]:hover {
+        color: var(--color-text);
+        border-left-color: var(--color-line);
+    }
+
+    .status-dot {
+        box-shadow: 0 0 6px var(--color-signal);
+    }
+
+    .branch-tag::before {
+        content: "⎇ ";
+        color: var(--color-dim);
+    }
+}

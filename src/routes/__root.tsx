@@ -2,6 +2,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 
+import { portfolio } from "#/data/portfolio";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -15,13 +16,26 @@ export const Route = createRootRoute({
                 content: "width=device-width, initial-scale=1",
             },
             {
-                title: "Portfolio",
+                title: portfolio.meta.title,
+            },
+            {
+                name: "description",
+                content: portfolio.meta.description,
             },
         ],
         links: [
             {
                 rel: "stylesheet",
                 href: appCss,
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.googleapis.com",
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.gstatic.com",
+                crossOrigin: "anonymous",
             },
         ],
     }),
@@ -34,7 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <head>
                 <HeadContent />
             </head>
-            <body className="min-h-screen bg-white text-gray-900 antialiased">
+            <body className="min-h-screen bg-bg font-sans text-text antialiased">
                 {children}
                 <TanStackDevtools
                     config={{
