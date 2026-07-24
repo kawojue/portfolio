@@ -298,6 +298,7 @@ export const portfolio = {
                 "DEX aggregator smart contract with multi-source swaps across 5+ EVM chains (Ethereum, Optimism, Base, Arbitrum, BSC, Polygon, Monad). Built ShareholderPass ERC-721 with referral rewards, USDC revenue sharing with ERC-1271 signatures, and NestJS backend for quote aggregation, trade indexing, and XP leaderboards.",
             role: "co-founder · lead eng",
             stack: "solidity · hardhat · nestjs · moralis · coingecko · redis",
+            companySite: "https://videlabs.io",
             systems: [
                 {
                     name: "Contracts",
@@ -321,7 +322,7 @@ export const portfolio = {
         },
         {
             id: "stedshop",
-            fileName: "stedshop-server.md",
+            fileName: "stedshop.md",
             name: "StedShop",
             status: "production",
             statusLabel: "● in production",
@@ -347,7 +348,7 @@ export const portfolio = {
         },
         {
             id: "memegoat",
-            fileName: "memegoat-game-server.md",
+            fileName: "memegoat-game.md",
             name: "MemeGoat Game",
             status: "sunset",
             statusLabel: "● sunset",
@@ -381,8 +382,7 @@ export const portfolio = {
                 "Talent and creative booking marketplace for Africa's creative industry. Built roughly 70% of the backend before departure: casting briefs and production projects, project-based hiring with e-signed contracts, OTP-gated Paystack wallet payouts, real-time chat over Socket.io, and a parallel job board alongside direct booking flows.",
             role: "backend engineer",
             stack: "nestjs · mongodb · paystack · socket.io",
-            site: "https://www.talentsphereafrica.com/",
-            repo: "https://github.com/kawojue/tsphere-africa-server",
+            site: "https://www.talentsphereafrica.com",
             diff: [
                 {
                     type: "rem",
@@ -457,7 +457,7 @@ export const portfolio = {
         },
         {
             id: "amopedia",
-            fileName: "amopedia-server.md",
+            fileName: "amopedia.md",
             name: "Amopedia",
             status: "production",
             statusLabel: "● in production",
@@ -483,7 +483,7 @@ export const portfolio = {
         },
         {
             id: "omega-loan",
-            fileName: "omega-loan-server.md",
+            fileName: "omega-loan.md",
             name: "Omega Loan",
             status: "production",
             statusLabel: "● in production",
