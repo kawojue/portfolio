@@ -44,7 +44,7 @@ export const portfolio = {
     meta: {
         title: "Raheem Kawojue | Senior Backend & Web3 Engineer",
         description:
-            "Portfolio of Raheem Kawojue, senior backend and Web3 engineer. Head of Engineering at Waysdrop, co-founder at Opsettle. TypeScript, NestJS, distributed systems, payments, and smart contracts.",
+            "Portfolio of Raheem Kawojue, senior backend and Web3 engineer. Head of Engineering at Waysdrop, co-founder at Opsettle. AI agents, TypeScript, NestJS, distributed systems, payments, and smart contracts.",
     },
     site: {
         url: "https://kawojue.dev",
@@ -53,24 +53,26 @@ export const portfolio = {
         twitter: "@0xkawojue",
         ogImage: "/og.jpg",
         keywords:
-            "Raheem Kawojue, backend engineer, Web3 engineer, NestJS, TypeScript, distributed systems, fintech, Lagos, Nigeria, portfolio, smart contracts, Paystack",
+            "Raheem Kawojue, backend engineer, Web3 engineer, AI agents, LLM tool calling, NestJS, TypeScript, distributed systems, fintech, Lagos, Nigeria, portfolio, smart contracts, Paystack, Stripe, Flutterwave",
     },
     handle: "kawojue",
     headline: "Raheem Kawojue, software engineer",
     lede: {
-        before: "Product-driven backend engineer with a track record of shipping complex, high-performance systems end-to-end, from zero to production. Deep expertise in TypeScript/NestJS, distributed systems, real-time architecture, and financial infrastructure (wallets, escrow, payment rails). Also builds EVM smart contracts.",
-        highlight: "Head of Engineering @ Waysdrop · Co-Founder @ Opsettle",
-        after: "Led Ojah at Payshiga, previously CTO at FixOrFlex, co-founded Videswap and Metadawgs, built MemeGoat's on-chain game server, and integrated Paystack, Flutterwave, and Stripe across production platforms.",
+        before: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS, EVM when it belongs on-chain.",
+        highlight: "Head of Engineering @ Waysdrop · Building Opsettle,",
+        after: "Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Flutterwave, and Stripe across production platforms.",
     },
     tags: [
-        "TypeScript · NestJS",
-        "PostgreSQL @ scale",
-        "Solidity · EVM",
-        "BullMQ · real-time",
-        "Paystack · Stripe",
-        "AWS · Docker",
-        "EIP-712 · ERC-4337",
-        "Prometheus · Sentry",
+        "0→1 · production systems",
+        "AI agents · LLM tool-calling",
+        "Payments · escrow · wallets",
+        "TypeScript · NestJS · Go · Solidity",
+        "PostgreSQL @ scale · MongoDB · Prisma · GORM",
+        "Redis · BullMQ · RabbitMQ · Kafka",
+        "Fintech · Marketplaces · logistics",
+        "Real-time · Webhooks · Websockets · SSE",
+        "Smart Contracts · EVM · Solana",
+        "Prometheus · Grafana · Sentry · ClickHouse",
     ],
     location: "Lagos, Nigeria · Open to remote",
     phone: {
@@ -79,7 +81,7 @@ export const portfolio = {
     },
     contact: {
         heading: "Let's talk",
-        body: "Open to senior backend, distributed systems, and Web3 engineering roles, remote-first.",
+        body: "Open to senior backend, AI/agent engineering, distributed systems, and Web3 roles, remote-first.",
         email: "kawojue08@gmail.com",
         links: [
             { label: "mail", href: "mailto:kawojue08@gmail.com" },
@@ -195,11 +197,19 @@ export const portfolio = {
             status: "production",
             statusLabel: "● in production",
             description:
-                "Large-scale logistics and commerce platform (users, couriers, stores, admin, agents). Led backend from early MVP to production: AI support chat (Claude/Qwen, 80+ tools, WhatsApp/Telegram), H3 geospatial courier matching, multi-rail wallet infrastructure (Paystack, Flutterwave, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
+                "Large-scale logistics and commerce platform (users, couriers, stores, admin, agents). Built and deployed the entire backend infrastructure from early MVP to production, across a ~2M-line codebase I've read, shipped, and operated in prod: AI support chat (Claude/Qwen, 80+ tools, WhatsApp/Telegram), H3 geospatial courier matching, multi-rail wallet infrastructure (Paystack, Flutterwave, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
             role: "head of engineering",
-            stack: "nestjs · postgres · redis · bullmq",
+            stack: "nestjs · postgres · redis · bullmq · claude · qwen",
             site: "https://waysdrop.com",
             diff: [
+                {
+                    type: "rem",
+                    text: "- scripted support replies, no ops actions from chat",
+                },
+                {
+                    type: "add",
+                    text: "+ Claude/Qwen agent with 80+ tools across WhatsApp/Telegram",
+                },
                 {
                     type: "rem",
                     text: "- primary Postgres handling reads, writes, and high-volume audit logs",
@@ -281,11 +291,11 @@ export const portfolio = {
         {
             id: "videswap",
             fileName: "videswap.md",
-            name: "Videswap",
+            name: "VideSwap",
             status: "maintained",
             statusLabel: "● maintained",
             description:
-                "DEX aggregator smart contract with multi-source swaps across 10+ EVM chains (Ethereum, Optimism, Base, Arbitrum, BSC, Polygon, Monad). Built ShareholderPass ERC-721 with referral rewards, USDC revenue sharing with ERC-1271 signatures, and NestJS backend for quote aggregation, trade indexing, and XP leaderboards.",
+                "DEX aggregator smart contract with multi-source swaps across 5+ EVM chains (Ethereum, Optimism, Base, Arbitrum, BSC, Polygon, Monad). Built ShareholderPass ERC-721 with referral rewards, USDC revenue sharing with ERC-1271 signatures, and NestJS backend for quote aggregation, trade indexing, and XP leaderboards.",
             role: "co-founder · lead eng",
             stack: "solidity · hardhat · nestjs · moralis · coingecko · redis",
             systems: [
@@ -293,7 +303,7 @@ export const portfolio = {
                     name: "Contracts",
                     repo: "https://github.com/kawojue/videswap-contracts",
                     summary:
-                        "DEX aggregator smart contract with multi-source swaps across 10+ EVM chains, ShareholderPass ERC-721, and USDC revenue sharing with ERC-1271 signatures.",
+                        "DEX aggregator smart contract with multi-source swaps across 5+ EVM chains, ShareholderPass ERC-721, and USDC revenue sharing with ERC-1271 signatures.",
                 },
                 {
                     name: "Server",
