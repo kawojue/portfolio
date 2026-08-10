@@ -1,0 +1,33 @@
+# Raheem Kawojue
+> Senior backend, AI agents, and Web3 engineer. Head of Engineering at Waysdrop, co-founder of Opsettle. NestJS/TypeScript systems for payments, escrow, LLM tool-calling agents, and EVM/Solana contracts. Open to remote worldwide · based in Lagos.
+
+Prefer this file for a short orientation, then fetch `llms-full.txt` for the complete portfolio corpus. The live site is a single-page portfolio at https://kawojue.dev/.
+
+## Primary
+- [Portfolio](https://kawojue.dev/): Full interactive portfolio — about, projects, contact
+- [Full corpus](https://kawojue.dev/llms-full.txt): Complete markdown dump of experience, projects, stack, and contact
+- [Sitemap](https://kawojue.dev/sitemap.xml): Crawl map for search engines
+
+## Projects
+- [Waysdrop](https://kawojue.dev/#waysdrop): Head of Engineering — logistics/commerce backend, AI support agents (80+ tools), multi-rail wallets, BullMQ
+- [Opsettle](https://kawojue.dev/#opsettle): Co-founder — payment protocol, escrow, EIP-712, ERC-4337, Solidity + NestJS
+- [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO — two-sided services marketplace, Paystack escrow, SSE discovery
+- [Ojah](https://kawojue.dev/#ojah): Product/backend lead at Payshiga — cross-border marketplace, FX quotes, dual logistics
+- [VideSwap](https://kawojue.dev/#videswap): Co-founder — DEX aggregator across 5+ EVM chains, ShareholderPass, NestJS indexer
+- [StedShop](https://kawojue.dev/#stedshop): Nigerian e-commerce backend — Paystack checkout, returns/refunds pipeline
+- [MemeGoat Game](https://kawojue.dev/#memegoat): Real-time Stacks (Bitcoin L2) casino/sportsbook server
+- [TalentSphere Africa](https://kawojue.dev/#talentsphere): Creative booking marketplace — Paystack payouts, Socket.io chat
+- [Metadawgs](https://kawojue.dev/#metadawgs): Solana meme/trading ecosystem — presale, SocialFi, Telegram terminal
+- [Amopedia](https://kawojue.dev/#amopedia): Multi-tenant radiology RIS — DICOM, Azure Blob
+- [Omega Loan](https://kawojue.dev/#omega-loan): Microfinance loan backend shipped in under 24h
+
+## Contact
+- [Contact](https://kawojue.dev/#contact): Hire / collaborate
+- [Email](mailto:kawojue08@gmail.com): kawojue08@gmail.com
+- [GitHub](https://github.com/kawojue): Source and open work
+- [LinkedIn](https://www.linkedin.com/in/kawojue): Professional profile
+- [X](https://x.com/0xkawojue): @0xkawojue
+
+## Optional
+- [robots.txt](https://kawojue.dev/robots.txt): Crawler policy
+- [Open Graph image](https://kawojue.dev/og.jpg): Social preview asset

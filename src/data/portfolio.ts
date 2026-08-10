@@ -20,6 +20,7 @@ export type Project = {
     description: string;
     role: string;
     stack: string;
+    flagship?: boolean;
     repo?: string;
     site?: string;
     companySite?: string;
@@ -42,9 +43,9 @@ export type SocialLink = {
 
 export const portfolio = {
     meta: {
-        title: "Raheem Kawojue | Senior Backend & Web3 Engineer",
+        title: "Raheem Kawojue | Senior Backend, AI Agents & Web3 Engineer",
         description:
-            "Portfolio of Raheem Kawojue, senior backend and Web3 engineer. Head of Engineering at Waysdrop, co-founder at Opsettle. AI agents, TypeScript, NestJS, distributed systems, payments, and smart contracts.",
+            "Raheem Kawojue — Head of Engineering at Waysdrop, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Flutterwave, Stripe), escrow wallets, and EVM smart contracts. Open to remote roles worldwide.",
     },
     site: {
         url: "https://kawojue.dev",
@@ -52,27 +53,69 @@ export const portfolio = {
         locale: "en_NG",
         twitter: "@0xkawojue",
         ogImage: "/og.jpg",
-        keywords:
-            "Raheem Kawojue, backend engineer, Web3 engineer, AI agents, LLM tool calling, NestJS, TypeScript, distributed systems, fintech, Lagos, Nigeria, portfolio, smart contracts, Paystack, Stripe, Flutterwave",
+        updated: "2026-08-11",
+        keywords: [
+            "Raheem Kawojue",
+            "kawojue",
+            "0xkawojue",
+            "senior backend engineer",
+            "NestJS engineer",
+            "TypeScript backend engineer",
+            "AI agent engineer",
+            "LLM tool calling engineer",
+            "Web3 engineer",
+            "Solidity developer",
+            "smart contract engineer",
+            "payment systems engineer",
+            "fintech backend engineer",
+            "Paystack integration engineer",
+            "Flutterwave Stripe NestJS",
+            "escrow wallet systems",
+            "distributed systems engineer",
+            "BullMQ Redis Kafka",
+            "PostgreSQL NestJS",
+            "remote NestJS engineer",
+            "remote backend engineer",
+            "EVM Solana engineer",
+            "Head of Engineering Waysdrop",
+            "Opsettle",
+            "Ojah Payshiga",
+            "backend engineer Lagos",
+            "backend engineer Nigeria",
+        ].join(", "),
+        skills: [
+            "NestJS",
+            "TypeScript",
+            "PostgreSQL",
+            "Redis",
+            "BullMQ",
+            "AI agents",
+            "LLM tool calling",
+            "payment systems",
+            "escrow",
+            "Paystack",
+            "Flutterwave",
+            "Stripe",
+            "Solidity",
+            "EVM",
+            "Solana",
+            "Kafka",
+            "RabbitMQ",
+            "WebSockets",
+            "distributed systems",
+            "fintech",
+        ],
     },
     handle: "kawojue",
-    headline: "Raheem Kawojue, software engineer",
-    lede: {
-        before: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS, EVM when it belongs on-chain.",
-        highlight: "Head of Engineering @ Waysdrop · Building Opsettle,",
-        after: "Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Flutterwave, and Stripe across production platforms.",
-    },
+    headline: "Raheem Kawojue",
+    punch: "Head of Engineering @ Waysdrop · Building Opsettle",
+    lede: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS — EVM when it belongs on-chain. Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Flutterwave, and Stripe across production platforms.",
     tags: [
-        "0→1 · production systems",
         "AI agents · LLM tool-calling",
         "Payments · escrow · wallets",
         "TypeScript · NestJS · Go · Solidity",
-        "PostgreSQL @ scale · MongoDB · Prisma · GORM",
         "Redis · BullMQ · RabbitMQ · Kafka",
-        "Fintech · Marketplaces · logistics",
-        "Real-time · Webhooks · Websockets · SSE",
         "Smart Contracts · EVM · Solana",
-        "Prometheus · Grafana · Sentry · ClickHouse",
     ],
     location: "Lagos, Nigeria · Open to remote",
     phone: {
@@ -196,6 +239,7 @@ export const portfolio = {
             name: "Waysdrop",
             status: "production",
             statusLabel: "● in production",
+            flagship: true,
             description:
                 "Large-scale logistics and commerce platform (users, couriers, stores, admin, agents). Built and deployed the entire backend infrastructure from early MVP to production, across a ~2M-line codebase I've read, shipped, and operated in prod: AI support chat (Claude/Qwen, 80+ tools, WhatsApp/Telegram), H3 geospatial courier matching, multi-rail wallet infrastructure (Paystack, Flutterwave, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
             role: "head of engineering",
@@ -230,6 +274,7 @@ export const portfolio = {
             name: "Opsettle",
             status: "wip",
             statusLabel: "● in progress",
+            flagship: true,
             description:
                 "Full payment infrastructure protocol spanning smart contracts, NestJS backend, and DevOps. Co-founded and built from zero: programmable payments, escrow, subscriptions, split payments, cross-chain swaps, virtual wallets, EIP-712 signatures, ERC-4337 account abstraction, WebSocket subsystem, and webhook management with retry/replay.",
             role: "co-founder · lead eng",
@@ -260,6 +305,20 @@ export const portfolio = {
             role: "cto",
             stack: "nestjs · postgres · paystack · redis",
             site: "https://fixorflex.com",
+            diff: [
+                {
+                    type: "rem",
+                    text: "- direct Paystack transfer on withdraw, race-prone balance updates",
+                },
+                {
+                    type: "add",
+                    text: "+ escrow lifecycle + concurrency-safe wallet withdrawals",
+                },
+                {
+                    type: "add",
+                    text: "+ SSE job discovery with relevance ranking + TOTP 2FA",
+                },
+            ],
         },
         {
             id: "ojah",
@@ -267,6 +326,7 @@ export const portfolio = {
             name: "Ojah",
             status: "production",
             statusLabel: "● in production",
+            flagship: true,
             description:
                 "Cross-border e-commerce marketplace built on Payshiga's payment and wallet rails. Led product and backend: multi-vendor catalog with HS customs codes, vendor-split checkout with live FX from Payshiga quotes, dual logistics providers (Shiip and Topship), HMAC-signed vendor sync from Payshiga business webhooks, and payment confirmation via Payshiga charge events queued through Bull.",
             role: "product lead · backend eng",
@@ -317,6 +377,20 @@ export const portfolio = {
                     repo: "https://github.com/kawojue/videswap-client",
                     summary:
                         "Web client for swap routing, wallet connection, and live quote execution against the Videswap aggregator.",
+                },
+            ],
+            diff: [
+                {
+                    type: "rem",
+                    text: "- single-DEX router, no on-chain revenue share",
+                },
+                {
+                    type: "add",
+                    text: "+ multi-source aggregator across 5+ EVM chains",
+                },
+                {
+                    type: "add",
+                    text: "+ ShareholderPass ERC-721 + USDC revenue sharing with ERC-1271",
                 },
             ],
         },
@@ -510,6 +584,7 @@ export const portfolio = {
     ] satisfies Project[],
     statusBar: {
         branch: "main",
+        signal: "open to remote",
         timezone: "Africa/Lagos",
         timezoneLabel: "Lagos",
         timezoneSuffix: "WAT",

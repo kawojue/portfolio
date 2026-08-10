@@ -10,10 +10,15 @@ export function Sidebar({ activeId }: SidebarProps) {
     return (
         <aside className="sticky top-0 z-40 self-start border-line max-[820px]:static max-[820px]:border-b min-[821px]:h-screen min-[821px]:overflow-y-auto min-[821px]:border-r">
             <div className="px-4 py-5 min-[821px]:px-5 min-[821px]:py-7">
-                <div className="mb-4 font-mono text-[13px] tracking-[0.02em] text-muted">
-                    ~/
-                    <span className="font-semibold text-text">
-                        {portfolio.handle}
+                <div className="mb-4 flex items-baseline justify-between gap-3 font-mono text-[13px] tracking-[0.02em] text-muted">
+                    <div>
+                        ~/
+                        <span className="font-semibold text-text">
+                            {portfolio.handle}
+                        </span>
+                    </div>
+                    <span className="hidden text-[10.5px] text-dim min-[821px]:inline">
+                        ⌘K
                     </span>
                 </div>
 

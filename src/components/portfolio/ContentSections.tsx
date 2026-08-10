@@ -1,13 +1,18 @@
 import { portfolio } from "#/data/portfolio";
+import { useReveal } from "#/hooks/useReveal";
 
 type SectionPromptProps = {
     command: string;
+    caret?: boolean;
 };
 
-export function SectionPrompt({ command }: SectionPromptProps) {
+export function SectionPrompt({ command, caret = false }: SectionPromptProps) {
     return (
         <div className="mb-1.5 font-mono text-[13px] text-dim">
             <span className="text-signal">$</span> {command}
+            {caret ? (
+                <span className="prompt-caret" aria-hidden="true" />
+            ) : null}
         </div>
     );
 }
@@ -32,23 +37,28 @@ export function TagList({ tags }: TagListProps) {
 }
 
 export function AboutSection() {
+    const { ref, visible } = useReveal<HTMLElement>();
+
     return (
         <section
+            ref={ref}
             id="about"
-            className="mb-16 scroll-mt-6"
+            data-visible={visible ? "true" : "false"}
+            className="reveal mb-16 scroll-mt-6"
             aria-labelledby="about-heading"
         >
-            <SectionPrompt command="cat about.md" />
+            <SectionPrompt command="cat about.md" caret />
             <h1
                 id="about-heading"
-                className="mb-3.5 font-mono text-2xl font-semibold tracking-[-0.01em] text-text sm:text-[28px]"
+                className="mb-1.5 font-mono text-[1.75rem] font-semibold tracking-[-0.02em] text-text sm:text-[2rem]"
             >
                 {portfolio.headline}
             </h1>
-            <p className="max-w-[58ch] text-base text-text">
-                {portfolio.lede.before}{" "}
-                <span className="text-signal">{portfolio.lede.highlight}</span>{" "}
-                {portfolio.lede.after}
+            <p className="mb-3.5 font-mono text-[13px] text-signal sm:text-sm">
+                {portfolio.punch}
+            </p>
+            <p className="max-w-[58ch] text-base text-muted">
+                {portfolio.lede}
             </p>
             <TagList tags={portfolio.tags} />
         </section>
@@ -56,10 +66,14 @@ export function AboutSection() {
 }
 
 export function ContactSection() {
+    const { ref, visible } = useReveal<HTMLElement>();
+
     return (
         <section
+            ref={ref}
             id="contact"
-            className="scroll-mt-6"
+            data-visible={visible ? "true" : "false"}
+            className="reveal scroll-mt-6"
             aria-labelledby="contact-heading"
         >
             <SectionPrompt command="cat contact.md" />

@@ -27,14 +27,61 @@
         html {
             scroll-behavior: auto;
         }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
     }
 
     body {
+        position: relative;
+        isolation: isolate;
         background-color: var(--color-bg);
         color: var(--color-text);
         font-family: var(--font-sans);
         font-size: 15px;
         line-height: 1.6;
+    }
+
+    body::before {
+        content: "";
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image:
+            radial-gradient(
+                ellipse 80% 50% at 15% -10%,
+                rgba(94, 234, 212, 0.055),
+                transparent 55%
+            ),
+            radial-gradient(
+                ellipse 60% 40% at 90% 5%,
+                rgba(240, 168, 96, 0.03),
+                transparent 50%
+            ),
+            linear-gradient(var(--color-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+        background-size:
+            auto,
+            auto,
+            48px 48px,
+            48px 48px;
+        background-position:
+            0 0,
+            0 0,
+            -1px -1px,
+            -1px -1px;
+        opacity: 0.35;
+        mask-image: radial-gradient(
+            ellipse 70% 60% at 50% 0%,
+            #000 20%,
+            transparent 75%
+        );
     }
 
     ::selection {
@@ -43,7 +90,8 @@
     }
 
     a:focus-visible,
-    button:focus-visible {
+    button:focus-visible,
+    [role="option"]:focus-visible {
         outline: 1px solid var(--color-signal);
         outline-offset: 2px;
     }
@@ -58,14 +106,23 @@
         font-family: var(--font-mono);
         font-size: 13px;
         transition:
-            color 120ms ease,
-            border-color 120ms ease;
+            color 160ms ease,
+            border-color 160ms ease,
+            background-color 160ms ease;
     }
 
     .tree-item:hover,
     .tree-item[data-active="true"] {
         color: var(--color-signal);
         border-left-color: var(--color-signal);
+    }
+
+    .tree-item[data-active="true"] {
+        background: linear-gradient(
+            90deg,
+            rgba(94, 234, 212, 0.06),
+            transparent 70%
+        );
     }
 
     .tree-item[data-dir="true"] {
@@ -78,10 +135,12 @@
     .tree-item[data-dir="true"]:hover {
         color: var(--color-text);
         border-left-color: var(--color-line);
+        background: transparent;
     }
 
     .status-dot {
         box-shadow: 0 0 6px var(--color-signal);
+        animation: status-pulse 2.4s ease-in-out infinite;
     }
 
     .branch-tag::before {
@@ -101,5 +160,66 @@
     .diff-scroll {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 420ms ease,
+            transform 420ms ease;
+    }
+
+    .reveal[data-visible="true"] {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .prompt-caret {
+        display: inline-block;
+        width: 0.55ch;
+        height: 1em;
+        margin-left: 2px;
+        vertical-align: -0.1em;
+        background: var(--color-signal);
+        animation: caret-blink 1.05s step-end infinite;
+    }
+
+    .project-flagship {
+        border-color: color-mix(
+            in srgb,
+            var(--color-signal) 28%,
+            var(--color-line)
+        );
+        box-shadow:
+            inset 3px 0 0 var(--color-signal),
+            0 0 0 1px rgba(94, 234, 212, 0.04);
+    }
+
+    .palette-scrim {
+        background: rgba(8, 10, 12, 0.72);
+        backdrop-filter: blur(6px);
+    }
+}
+
+@keyframes status-pulse {
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 6px var(--color-signal);
+    }
+    50% {
+        opacity: 0.55;
+        box-shadow: 0 0 10px var(--color-signal);
+    }
+}
+
+@keyframes caret-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
     }
 }

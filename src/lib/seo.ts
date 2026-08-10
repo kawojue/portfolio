@@ -10,8 +10,11 @@ export function getPersonJsonLd() {
     return {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": `${siteUrl}/#person`,
         name: "Raheem Kawojue",
+        alternateName: ["kawojue", "0xkawojue"],
         url: siteUrl,
+        image: absoluteUrl(portfolio.site.ogImage),
         jobTitle: "Senior Backend & Web3 Engineer",
         description: portfolio.meta.description,
         email: "mailto:kawojue08@gmail.com",
@@ -21,6 +24,23 @@ export function getPersonJsonLd() {
             addressLocality: "Lagos",
             addressCountry: "NG",
         },
+        nationality: {
+            "@type": "Country",
+            name: "Nigeria",
+        },
+        knowsLanguage: ["en"],
+        knowsAbout: [...portfolio.site.skills],
+        worksFor: [
+            {
+                "@type": "Organization",
+                name: "Waysdrop",
+                url: "https://waysdrop.com",
+            },
+            {
+                "@type": "Organization",
+                name: "Opsettle",
+            },
+        ],
         sameAs: [
             "https://github.com/kawojue",
             "https://www.linkedin.com/in/kawojue",
@@ -33,10 +53,47 @@ export function getWebsiteJsonLd() {
     return {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
         name: portfolio.site.name,
+        alternateName: "kawojue.dev",
         url: siteUrl,
         description: portfolio.meta.description,
         inLanguage: "en",
+        publisher: { "@id": `${siteUrl}/#person` },
+    };
+}
+
+export function getProfilePageJsonLd() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#profile`,
+        url: siteUrl,
+        name: portfolio.meta.title,
+        description: portfolio.meta.description,
+        inLanguage: "en",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/#person` },
+        about: { "@id": `${siteUrl}/#person` },
+        dateModified: portfolio.site.updated,
+    };
+}
+
+export function getItemListJsonLd() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": `${siteUrl}/#projects`,
+        name: "Selected projects by Raheem Kawojue",
+        itemListOrder: "https://schema.org/ItemListOrderAscending",
+        numberOfItems: portfolio.projects.length,
+        itemListElement: portfolio.projects.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: project.name,
+            url: `${siteUrl}/#${project.id}`,
+            description: project.description,
+        })),
     };
 }
 
@@ -56,11 +113,24 @@ export function getRootHead() {
             { title },
             { name: "description", content: description },
             { name: "author", content: "Raheem Kawojue" },
+            { name: "creator", content: "Raheem Kawojue" },
+            { name: "publisher", content: "Raheem Kawojue" },
             { name: "keywords", content: portfolio.site.keywords },
+            { name: "category", content: "technology" },
             { name: "theme-color", content: "#101214" },
             { name: "color-scheme", content: "dark" },
-            { name: "robots", content: "index, follow" },
-            { property: "og:type", content: "website" },
+            {
+                name: "robots",
+                content:
+                    "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+            },
+            {
+                name: "googlebot",
+                content:
+                    "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+            },
+            { name: "bingbot", content: "index, follow" },
+            { property: "og:type", content: "profile" },
             { property: "og:site_name", content: portfolio.site.name },
             { property: "og:locale", content: portfolio.site.locale },
             { property: "og:url", content: siteUrl },
@@ -71,6 +141,9 @@ export function getRootHead() {
             { property: "og:image:width", content: "1200" },
             { property: "og:image:height", content: "630" },
             { property: "og:image:alt", content: title },
+            { property: "profile:first_name", content: "Raheem" },
+            { property: "profile:last_name", content: "Kawojue" },
+            { property: "profile:username", content: "kawojue" },
             { name: "twitter:card", content: "summary_large_image" },
             { name: "twitter:site", content: portfolio.site.twitter },
             { name: "twitter:creator", content: portfolio.site.twitter },
@@ -81,6 +154,16 @@ export function getRootHead() {
         ],
         links: [
             { rel: "canonical", href: siteUrl },
+            {
+                rel: "describedby",
+                href: absoluteUrl("/llms.txt"),
+                type: "text/plain",
+            },
+            {
+                rel: "sitemap",
+                href: absoluteUrl("/sitemap.xml"),
+                type: "application/xml",
+            },
             { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
             {
                 rel: "icon",
@@ -109,6 +192,14 @@ export function getRootHead() {
             {
                 type: "application/ld+json",
                 children: JSON.stringify(getWebsiteJsonLd()),
+            },
+            {
+                type: "application/ld+json",
+                children: JSON.stringify(getProfilePageJsonLd()),
+            },
+            {
+                type: "application/ld+json",
+                children: JSON.stringify(getItemListJsonLd()),
             },
         ],
     };

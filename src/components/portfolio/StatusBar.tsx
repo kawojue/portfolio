@@ -23,11 +23,21 @@ export function StatusBar() {
                         {systemsInProduction} systems in prod
                     </span>
                 </span>
+                <span className="hidden shrink-0 text-signal/80 sm:inline">
+                    {portfolio.statusBar.signal}
+                </span>
                 <span className="branch-tag hidden shrink-0 sm:inline">
                     {portfolio.statusBar.branch}
                 </span>
             </div>
-            <span className="shrink-0 tabular-nums">{clock}</span>
+            <div className="flex shrink-0 items-center gap-3">
+                <span className="hidden text-dim sm:inline">
+                    <kbd className="rounded border border-line px-1 py-px text-[10px]">
+                        ⌘K
+                    </kbd>
+                </span>
+                <span className="tabular-nums">{clock}</span>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import type { Project } from "#/data/portfolio";
 
+import { SectionPrompt } from "#/components/portfolio/ContentSections";
 import { DiffBlock } from "#/components/portfolio/DiffBlock";
+import { useReveal } from "#/hooks/useReveal";
 
 type ProjectPanelProps = {
     project: Project;
@@ -11,6 +13,9 @@ function repoLabel(href: string) {
 }
 
 export function ProjectPanel({ project }: ProjectPanelProps) {
+    const { ref, visible } = useReveal<HTMLElement>();
+    const flagship = Boolean(project.flagship);
+
     const statusClassName =
         project.status === "production"
             ? "text-signal"
@@ -20,21 +25,46 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
 
     return (
         <section
+            ref={ref}
             id={project.id}
-            className="mb-16 scroll-mt-6 last:mb-0"
+            data-visible={visible ? "true" : "false"}
+            className={[
+                "reveal scroll-mt-6",
+                flagship ? "mb-16" : "mb-10",
+            ].join(" ")}
             aria-labelledby={`${project.id}-heading`}
         >
+            <SectionPrompt command={`cat projects/${project.fileName}`} />
             <h2
                 id={`${project.id}-heading`}
-                className="mb-3 break-all font-mono text-base font-semibold text-text sm:text-lg"
+                className={[
+                    "mb-3 break-all font-mono font-semibold text-text",
+                    flagship
+                        ? "text-base sm:text-lg"
+                        : "text-[13px] text-muted sm:text-sm",
+                ].join(" ")}
             >
                 ~/projects/
-                <span className="font-normal text-dim">{project.fileName}</span>
+                <span
+                    className={flagship ? "font-normal text-dim" : "text-dim"}
+                >
+                    {project.fileName}
+                </span>
             </h2>
 
-            <article className="rounded border border-line bg-surface px-5.5 py-5">
+            <article
+                className={[
+                    "rounded border border-line bg-surface",
+                    flagship ? "project-flagship px-5.5 py-5" : "px-4 py-3.5",
+                ].join(" ")}
+            >
                 <div className="mb-2 flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
-                    <h3 className="font-mono text-[15px] font-semibold text-text">
+                    <h3
+                        className={[
+                            "font-mono font-semibold text-text",
+                            flagship ? "text-[15px]" : "text-[13.5px]",
+                        ].join(" ")}
+                    >
                         {project.name}
                     </h3>
                     <span
@@ -44,12 +74,22 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
                     </span>
                 </div>
 
-                <p className="max-w-[62ch] text-sm text-muted">
+                <p
+                    className={[
+                        "max-w-[62ch] text-muted",
+                        flagship ? "text-sm" : "text-[13px] leading-relaxed",
+                    ].join(" ")}
+                >
                     {project.description}
                 </p>
 
                 {project.systems?.length ? (
-                    <ul className="mt-4 space-y-3 border-t border-line pt-4">
+                    <ul
+                        className={[
+                            "space-y-3 border-t border-line",
+                            flagship ? "mt-4 pt-4" : "mt-3 pt-3",
+                        ].join(" ")}
+                    >
                         {project.systems.map((system) => (
                             <li key={system.name}>
                                 <div className="mb-1 font-mono text-[13px] font-semibold text-text">
@@ -77,7 +117,12 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
                     <DiffBlock lines={project.diff} />
                 ) : null}
 
-                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11.5px] text-dim">
+                <div
+                    className={[
+                        "flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11.5px] text-dim",
+                        flagship ? "mt-3" : "mt-2.5",
+                    ].join(" ")}
+                >
                     <span>role: {project.role}</span>
                     <span>stack: {project.stack}</span>
                     {project.site ? (

@@ -1,0 +1,7 @@
+/* Team: Raheem Kawojue
+   Site: https://kawojue.dev
+   Stack: TanStack Start · React · TypeScript · Tailwind · Nitro · Vercel
+   Contact: kawojue08@gmail.com
+   Standards: robots.txt · sitemap.xml · llms.txt · llms-full.txt
+   Motto: backends that handle real money.
+*/

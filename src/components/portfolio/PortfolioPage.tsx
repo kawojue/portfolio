@@ -3,6 +3,7 @@ import {
     AboutSection,
     ContactSection,
 } from "#/components/portfolio/ContentSections";
+import { CommandPalette } from "#/components/portfolio/CommandPalette";
 import { ConsoleEasterEgg } from "#/components/portfolio/ConsoleEasterEgg";
 import { ProjectPanel } from "#/components/portfolio/ProjectPanel";
 import { Sidebar } from "#/components/portfolio/Sidebar";
@@ -38,6 +39,7 @@ export function PortfolioPage() {
             </div>
 
             <StatusBar />
+            <CommandPalette />
             <ConsoleEasterEgg />
         </>
     );

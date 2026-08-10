@@ -1,12 +1,15 @@
 {
     "name": "Raheem Kawojue",
     "short_name": "kawojue",
-    "description": "Senior Backend & Web3 Engineer portfolio",
+    "description": "Senior NestJS/TypeScript backend engineer — AI agents, payments, and Web3. Head of Engineering at Waysdrop.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
     "background_color": "#101214",
     "theme_color": "#101214",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["business", "productivity", "developer"],
     "icons": [
         {
             "src": "/favicon.svg",
