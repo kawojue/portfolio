@@ -75,7 +75,7 @@ export function getProfilePageJsonLd() {
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntity: { "@id": `${siteUrl}/#person` },
         about: { "@id": `${siteUrl}/#person` },
-        dateModified: portfolio.site.updated,
+        dateModified: `${portfolio.site.updated}T00:00:00+01:00`,
     };
 }
 
