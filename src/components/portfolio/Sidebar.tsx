@@ -1,11 +1,53 @@
-import { portfolio } from "#/data/portfolio";
+import { Link } from "@tanstack/react-router";
+
+import {
+    isExternalHref,
+    portfolio,
+    primaryNavIdFor,
+    type NavItem,
+} from "#/data/portfolio";
 
 type SidebarProps = {
     activeId: string;
 };
 
+function externalProps(href: string) {
+    return isExternalHref(href)
+        ? { target: "_blank", rel: "noreferrer" }
+        : {};
+}
+
+type TreeLinkProps = {
+    item: NavItem;
+    active: boolean;
+    className: string;
+};
+
+function TreeLink({ item, active, className }: TreeLinkProps) {
+    const shared = {
+        "data-active": active ? "true" : "false",
+        "data-dir": item.kind === "dir" ? "true" : "false",
+        "aria-current": active ? ("location" as const) : undefined,
+        className,
+    };
+
+    if (item.href.startsWith("/")) {
+        return (
+            <Link to={item.href} {...shared}>
+                {item.label}
+            </Link>
+        );
+    }
+
+    return (
+        <a href={item.href} {...shared}>
+            {item.label}
+        </a>
+    );
+}
+
 export function Sidebar({ activeId }: SidebarProps) {
-    const fileNav = portfolio.nav.filter((item) => item.kind === "file");
+    const primaryActiveId = primaryNavIdFor(activeId);
 
     return (
         <aside className="sticky top-0 z-40 self-start border-line max-[820px]:static max-[820px]:border-b min-[821px]:h-screen min-[821px]:overflow-y-auto min-[821px]:border-r">
@@ -26,8 +68,8 @@ export function Sidebar({ activeId }: SidebarProps) {
                     aria-label="Site sections"
                     className="mobile-nav-scroll -mx-4 flex gap-1 overflow-x-auto px-4 pb-1 min-[821px]:hidden"
                 >
-                    {fileNav.map((item) => {
-                        const isActive = activeId === item.id;
+                    {portfolio.primaryNav.map((item) => {
+                        const isActive = primaryActiveId === item.id;
 
                         return (
                             <a
@@ -41,6 +83,12 @@ export function Sidebar({ activeId }: SidebarProps) {
                             </a>
                         );
                     })}
+                    <Link
+                        to="/resume"
+                        className="tree-item shrink-0 whitespace-nowrap rounded-sm border border-line px-3 py-1.5 [border-left-width:1px]"
+                    >
+                        resume
+                    </Link>
                 </nav>
 
                 <nav
@@ -50,27 +98,22 @@ export function Sidebar({ activeId }: SidebarProps) {
                     {portfolio.nav.map((item) => {
                         const isActive =
                             item.kind === "file" && activeId === item.id;
-                        const isContact = item.id === "contact";
+                        const spaced =
+                            item.id === "experience" || item.id === "resume";
 
                         return (
-                            <a
+                            <TreeLink
                                 key={item.id}
-                                href={item.href}
-                                data-active={isActive ? "true" : "false"}
-                                data-dir={
-                                    item.kind === "dir" ? "true" : "false"
-                                }
-                                aria-current={isActive ? "location" : undefined}
+                                item={item}
+                                active={isActive}
                                 className={[
                                     "tree-item",
                                     item.indent ? "ml-3" : "",
-                                    isContact ? "mt-4" : "",
+                                    spaced ? "mt-4" : "",
                                 ]
                                     .filter(Boolean)
                                     .join(" ")}
-                            >
-                                {item.label}
-                            </a>
+                            />
                         );
                     })}
                 </nav>
@@ -80,16 +123,7 @@ export function Sidebar({ activeId }: SidebarProps) {
                         <a
                             key={link.href}
                             href={link.href}
-                            target={
-                                link.href.startsWith("http")
-                                    ? "_blank"
-                                    : undefined
-                            }
-                            rel={
-                                link.href.startsWith("http")
-                                    ? "noreferrer"
-                                    : undefined
-                            }
+                            {...externalProps(link.href)}
                             className="transition-colors hover:text-signal"
                         >
                             {link.label}
@@ -102,16 +136,7 @@ export function Sidebar({ activeId }: SidebarProps) {
                         <a
                             key={link.href}
                             href={link.href}
-                            target={
-                                link.href.startsWith("http")
-                                    ? "_blank"
-                                    : undefined
-                            }
-                            rel={
-                                link.href.startsWith("http")
-                                    ? "noreferrer"
-                                    : undefined
-                            }
+                            {...externalProps(link.href)}
                             className="block break-all transition-colors hover:text-signal"
                         >
                             {link.label}
@@ -124,6 +149,25 @@ export function Sidebar({ activeId }: SidebarProps) {
                         {portfolio.phone.label}
                     </a>
                     <span>{portfolio.location}</span>
+                </div>
+
+                <div className="mt-6 hidden rounded border border-line bg-surface px-3.5 py-3 min-[821px]:block">
+                    <div className="mb-1 flex items-center gap-2 font-mono text-[11px] text-text">
+                        <span
+                            aria-hidden="true"
+                            className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-signal"
+                        />
+                        {portfolio.statusBar.signal}
+                    </div>
+                    <p className="font-mono text-[11px] leading-relaxed text-dim">
+                        {portfolio.availability}
+                    </p>
+                    <a
+                        href={`mailto:${portfolio.contact.email}`}
+                        className="mt-2 inline-block font-mono text-[11.5px] text-signal transition-colors hover:text-text"
+                    >
+                        → email me
+                    </a>
                 </div>
             </div>
         </aside>

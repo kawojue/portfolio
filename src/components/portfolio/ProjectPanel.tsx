@@ -13,7 +13,7 @@ function repoLabel(href: string) {
 }
 
 export function ProjectPanel({ project }: ProjectPanelProps) {
-    const { ref, visible } = useReveal<HTMLElement>();
+    const { ref, state } = useReveal<HTMLElement>();
     const flagship = Boolean(project.flagship);
 
     const statusClassName =
@@ -27,7 +27,7 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
         <section
             ref={ref}
             id={project.id}
-            data-visible={visible ? "true" : "false"}
+            data-reveal={state}
             className={[
                 "reveal scroll-mt-6",
                 flagship ? "mb-16" : "mb-10",

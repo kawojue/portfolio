@@ -1,28 +1,35 @@
 # Raheem Kawojue
-> Senior backend, AI agents, and Web3 engineer. Head of Engineering at Waysdrop, co-founder of Opsettle. NestJS/TypeScript systems for payments, escrow, LLM tool-calling agents, and EVM/Solana contracts. Open to remote worldwide · based in Lagos.
+> Senior backend, AI agents, and Web3 engineer. CTO and Co-founder at Waysdrop, co-founder of Opsettle. NestJS/TypeScript systems for payments, escrow, LLM tool-calling agents, and EVM/Solana contracts. Open to remote worldwide · based in Lagos.
 
-Prefer this file for a short orientation, then fetch `llms-full.txt` for the complete portfolio corpus. The live site is a single-page portfolio at https://kawojue.dev/.
+Prefer this file for a short orientation, then fetch `llms-full.txt` for the complete portfolio corpus. The live site is a single-page portfolio at https://kawojue.dev/ with a print-friendly resume at https://kawojue.dev/resume.
 
 ## Primary
-- [Portfolio](https://kawojue.dev/): Full interactive portfolio — about, projects, contact
+- [Portfolio](https://kawojue.dev/): Interactive portfolio. About, featured work, experience, skills, contact
+- [Resume](https://kawojue.dev/resume): Print / Save-as-PDF view generated from the same data
 - [Full corpus](https://kawojue.dev/llms-full.txt): Complete markdown dump of experience, projects, stack, and contact
 - [Sitemap](https://kawojue.dev/sitemap.xml): Crawl map for search engines
 
-## Projects
-- [Waysdrop](https://kawojue.dev/#waysdrop): Head of Engineering — logistics/commerce backend, AI support agents (80+ tools), multi-rail wallets, BullMQ
-- [Opsettle](https://kawojue.dev/#opsettle): Co-founder — payment protocol, escrow, EIP-712, ERC-4337, Solidity + NestJS
-- [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO — two-sided services marketplace, Paystack escrow, SSE discovery
-- [Ojah](https://kawojue.dev/#ojah): Product/backend lead at Payshiga — cross-border marketplace, FX quotes, dual logistics
-- [VideSwap](https://kawojue.dev/#videswap): Co-founder — DEX aggregator across 5+ EVM chains, ShareholderPass, NestJS indexer
-- [StedShop](https://kawojue.dev/#stedshop): Nigerian e-commerce backend — Paystack checkout, returns/refunds pipeline
+## Featured systems
+- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Logistics/commerce backend, support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, ~2M-line prod codebase
+- [Opsettle](https://kawojue.dev/#opsettle): Co-founder. Payment protocol, escrow, EIP-712, ERC-4337, Solidity + NestJS
+- [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO. Two-sided services marketplace, Paystack escrow, concurrency-safe withdrawals, SSE discovery
+- [Ojah](https://kawojue.dev/#ojah): Product/backend lead at Payshiga. Cross-border marketplace, live FX, vendor-split checkout, dual logistics
+
+## More work
+- [VideSwap](https://kawojue.dev/#videswap): Co-founder. DEX aggregator across 5+ EVM chains, ShareholderPass, NestJS indexer
+- [Metadawgs](https://kawojue.dev/#metadawgs): Solana meme/trading ecosystem. Five NestJS services (presale, SocialFi, Telegram terminal)
+- [StedShop](https://kawojue.dev/#stedshop): Nigerian e-commerce backend. Paystack checkout, returns/refunds pipeline
+- [TalentSphere Africa](https://kawojue.dev/#talentsphere): Creative booking marketplace. Paystack payouts, Socket.io chat
 - [MemeGoat Game](https://kawojue.dev/#memegoat): Real-time Stacks (Bitcoin L2) casino/sportsbook server
-- [TalentSphere Africa](https://kawojue.dev/#talentsphere): Creative booking marketplace — Paystack payouts, Socket.io chat
-- [Metadawgs](https://kawojue.dev/#metadawgs): Solana meme/trading ecosystem — presale, SocialFi, Telegram terminal
-- [Amopedia](https://kawojue.dev/#amopedia): Multi-tenant radiology RIS — DICOM, Azure Blob
+- [Amopedia](https://kawojue.dev/#amopedia): Multi-tenant radiology RIS. DICOM, Azure Blob
 - [Omega Loan](https://kawojue.dev/#omega-loan): Microfinance loan backend shipped in under 24h
 
-## Contact
+## Sections
+- [Experience](https://kawojue.dev/#experience): Role timeline
+- [Skills](https://kawojue.dev/#skills): Languages, backend, payments, AI, Web3, infra
 - [Contact](https://kawojue.dev/#contact): Hire / collaborate
+
+## Contact
 - [Email](mailto:kawojue08@gmail.com): kawojue08@gmail.com
 - [GitHub](https://github.com/kawojue): Source and open work
 - [LinkedIn](https://www.linkedin.com/in/kawojue): Professional profile

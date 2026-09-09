@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { portfolio } from "#/data/portfolio";
@@ -15,12 +16,7 @@ const items: PaletteItem[] = portfolio.nav
         id: item.id,
         label: item.label,
         href: item.href,
-        hint:
-            item.id === "about"
-                ? "intro"
-                : item.id === "contact"
-                  ? "reach out"
-                  : "project",
+        hint: item.hint ?? "section",
     }));
 
 function isModKey(event: KeyboardEvent) {
@@ -28,6 +24,7 @@ function isModKey(event: KeyboardEvent) {
 }
 
 export function CommandPalette() {
+    const navigate = useNavigate();
     const listId = useId();
     const inputRef = useRef<HTMLInputElement>(null);
     const [open, setOpen] = useState(false);
@@ -93,7 +90,13 @@ export function CommandPalette() {
 
     const jump = (href: string) => {
         setOpen(false);
-        window.location.hash = href.replace(/^#/, "");
+
+        if (href.startsWith("#")) {
+            window.location.hash = href.slice(1);
+            return;
+        }
+
+        void navigate({ href });
     };
 
     return (

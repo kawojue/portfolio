@@ -17,6 +17,7 @@ export type Project = {
     name: string;
     status: ProjectStatus;
     statusLabel: string;
+    summary: string;
     description: string;
     role: string;
     stack: string;
@@ -34,6 +35,14 @@ export type NavItem = {
     href: string;
     kind: "file" | "dir";
     indent?: boolean;
+    hint?: string;
+};
+
+export type PrimaryNavItem = {
+    id: string;
+    label: string;
+    href: string;
+    sectionIds: readonly string[];
 };
 
 export type SocialLink = {
@@ -41,11 +50,35 @@ export type SocialLink = {
     href: string;
 };
 
+export type Action = SocialLink & {
+    primary?: boolean;
+};
+
+export type Highlight = {
+    value: string;
+    label: string;
+};
+
+export type Experience = {
+    id: string;
+    role: string;
+    org: string;
+    orgHref?: string;
+    period: string;
+    summary: string;
+    projectIds?: readonly string[];
+};
+
+export type SkillGroup = {
+    label: string;
+    items: readonly string[];
+};
+
 export const portfolio = {
     meta: {
         title: "Raheem Kawojue | Senior Backend, AI Agents & Web3 Engineer",
         description:
-            "Raheem Kawojue — Head of Engineering at Waysdrop, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Flutterwave, Stripe), escrow wallets, and EVM smart contracts. Open to remote roles worldwide.",
+            "Raheem Kawojue - CTO and Co-founder at Waysdrop, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, and EVM smart contracts. Open to remote roles worldwide.",
     },
     site: {
         url: "https://kawojue.dev",
@@ -53,7 +86,7 @@ export const portfolio = {
         locale: "en_NG",
         twitter: "@0xkawojue",
         ogImage: "/og.jpg",
-        updated: "2026-08-11",
+        updated: "2026-09-09",
         keywords: [
             "Raheem Kawojue",
             "kawojue",
@@ -69,7 +102,7 @@ export const portfolio = {
             "payment systems engineer",
             "fintech backend engineer",
             "Paystack integration engineer",
-            "Flutterwave Stripe NestJS",
+            "Nomba Stripe NestJS",
             "escrow wallet systems",
             "distributed systems engineer",
             "BullMQ Redis Kafka",
@@ -77,6 +110,7 @@ export const portfolio = {
             "remote NestJS engineer",
             "remote backend engineer",
             "EVM Solana engineer",
+            "CTO Waysdrop",
             "Head of Engineering Waysdrop",
             "Opsettle",
             "Ojah Payshiga",
@@ -91,10 +125,12 @@ export const portfolio = {
             "BullMQ",
             "AI agents",
             "LLM tool calling",
+            "notification agents",
+            "retention agents",
             "payment systems",
             "escrow",
             "Paystack",
-            "Flutterwave",
+            "Nomba",
             "Stripe",
             "Solidity",
             "EVM",
@@ -108,15 +144,30 @@ export const portfolio = {
     },
     handle: "kawojue",
     headline: "Raheem Kawojue",
-    punch: "Head of Engineering @ Waysdrop · Building Opsettle",
-    lede: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS — EVM when it belongs on-chain. Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Flutterwave, and Stripe across production platforms.",
+    title: "Senior Backend Engineer · AI Agents · Payments · Web3",
+    punch: "CTO & Co-founder @ Waysdrop · Building Opsettle",
+    valueProp:
+        "I take payments, AI agents, and real-time systems from zero to production on TypeScript/NestJS, then keep them running when real money is on the line.",
+    lede: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS, and EVM when it belongs on-chain. CTO and co-founder at Waysdrop after leading backend, then engineering. Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Nomba, and Stripe across production platforms.",
+    availability: "Open to senior roles · remote-first · Lagos (WAT, UTC+1)",
     tags: [
-        "AI agents · LLM tool-calling",
+        "AI agents · support · notify · retain",
         "Payments · escrow · wallets",
         "TypeScript · NestJS · Go · Solidity",
         "Redis · BullMQ · RabbitMQ · Kafka",
         "Smart Contracts · EVM · Solana",
     ],
+    highlights: [
+        { value: "3", label: "production AI agents: support, notify, retain" },
+        { value: "4", label: "payment rails shipped to prod" },
+        { value: "5+", label: "EVM chains aggregated" },
+        { value: "~2M", label: "lines of backend operated in prod" },
+    ] satisfies Highlight[],
+    actions: [
+        { label: "email me", href: "mailto:kawojue08@gmail.com", primary: true },
+        { label: "linkedin", href: "https://www.linkedin.com/in/kawojue" },
+        { label: "resume", href: "/resume" },
+    ] satisfies Action[],
     location: "Lagos, Nigeria · Open to remote",
     phone: {
         label: "+234 813 191 1964",
@@ -124,7 +175,7 @@ export const portfolio = {
     },
     contact: {
         heading: "Let's talk",
-        body: "Open to senior backend, AI/agent engineering, distributed systems, and Web3 roles, remote-first.",
+        body: "Hiring for senior backend, AI-agent, distributed systems, or Web3 work? I'm remote-first out of Lagos (UTC+1), which overlaps cleanly with European and US East hours. Email is the fastest route; a short note about the problem you're solving is enough to start.",
         email: "kawojue08@gmail.com",
         links: [
             { label: "mail", href: "mailto:kawojue08@gmail.com" },
@@ -133,6 +184,167 @@ export const portfolio = {
             { label: "x", href: "https://x.com/0xkawojue" },
         ] satisfies SocialLink[],
     },
+    // Periods are drafted from the project writeups. Correct them here and
+    // the timeline, resume, and llms corpus follow.
+    experience: [
+        {
+            id: "waysdrop-cto",
+            role: "CTO & Co-founder",
+            org: "Waysdrop",
+            orgHref: "https://waysdrop.com",
+            period: "Sep 2026 - present",
+            summary:
+                "Own product and engineering for a logistics and commerce platform in production: the agent fleet (support, notifications, activation/retention), multi-rail wallets, and the ~2M-line backend those systems sit on.",
+            projectIds: ["waysdrop"],
+        },
+        {
+            id: "waysdrop-hoe",
+            role: "Head of Engineering",
+            org: "Waysdrop",
+            orgHref: "https://waysdrop.com",
+            period: "Jan 2026 - Aug 2026",
+            summary:
+                "Ran engineering after leading the backend: production AI agents beyond chat, H3 courier matching, 15+ queues, and the reliability work that kept payments and delivery up.",
+            projectIds: ["waysdrop"],
+        },
+        {
+            id: "waysdrop-lead",
+            role: "Lead Backend Engineer",
+            org: "Waysdrop",
+            orgHref: "https://waysdrop.com",
+            period: "Jan 2025 - Dec 2025",
+            summary:
+                "Took the backend from early MVP to production: NestJS services, Paystack/Nomba/Stripe wallet rails, Bull queues, and the first Claude/Qwen support agent with 80+ tools.",
+            projectIds: ["waysdrop"],
+        },
+        {
+            id: "opsettle",
+            role: "Co-founder · Lead Engineer",
+            org: "Opsettle",
+            period: "2025 - present",
+            summary:
+                "Building a programmable payments protocol from zero: Solidity contracts for escrow, subscriptions, and settlement, ERC-4337 account abstraction, and the NestJS rails around them.",
+            projectIds: ["opsettle"],
+        },
+        {
+            id: "fixorflex",
+            role: "CTO",
+            org: "FixOrFlex",
+            orgHref: "https://fixorflex.com",
+            period: "2024 - 2025",
+            summary:
+                "Architected and shipped a two-sided services marketplace backend: Paystack escrow, concurrency-safe withdrawals, SSE job discovery, KYC gating, and TOTP 2FA.",
+            projectIds: ["fixorflex"],
+        },
+        {
+            id: "payshiga",
+            role: "Product Lead · Backend Engineer",
+            org: "Payshiga (Ojah)",
+            orgHref: "https://payshiga.com",
+            period: "2024",
+            summary:
+                "Led product and backend for Ojah, a cross-border marketplace on Payshiga's rails: live FX quotes, vendor-split checkout, dual logistics, and HMAC-signed webhook sync.",
+            projectIds: ["ojah"],
+        },
+        {
+            id: "web3",
+            role: "Co-founder · Backend Engineer",
+            org: "Videlabs · Metadawgs",
+            orgHref: "https://videlabs.io",
+            period: "2024 - present",
+            summary:
+                "VideSwap DEX aggregator across 5+ EVM chains with ERC-721 revenue sharing; five NestJS services for Metadawgs' Solana ecosystem covering presale, trading, SocialFi, and moderation.",
+            projectIds: ["videswap", "metadawgs"],
+        },
+        {
+            id: "freelance",
+            role: "Backend Engineer · Freelance",
+            org: "Independent",
+            period: "2023 - 2024",
+            summary:
+                "Shipped production backends for clients across e-commerce, fintech, healthcare, and Web3 gaming: StedShop, TalentSphere Africa, Amopedia, Omega Loan, and MemeGoat.",
+            projectIds: [
+                "stedshop",
+                "talentsphere",
+                "memegoat",
+                "amopedia",
+                "omega-loan",
+            ],
+        },
+    ] satisfies Experience[],
+    skillGroups: [
+        {
+            label: "Languages",
+            items: ["TypeScript", "Node.js", "Go", "Solidity", "SQL"],
+        },
+        {
+            label: "Backend & data",
+            items: [
+                "NestJS",
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "BullMQ",
+                "RabbitMQ",
+                "Kafka",
+                "WebSockets · Socket.io",
+                "SSE",
+                "Webhooks · HMAC signing",
+            ],
+        },
+        {
+            label: "Payments & fintech",
+            items: [
+                "Paystack",
+                "Nomba",
+                "Stripe",
+                "Payshiga",
+                "Escrow & wallet ledgers",
+                "Dedicated virtual accounts",
+                "KYC (NIN · CAC)",
+                "TOTP 2FA",
+                "Refunds & reconciliation",
+            ],
+        },
+        {
+            label: "AI agents",
+            items: [
+                "Claude",
+                "Qwen",
+                "LLM tool-calling",
+                "Notification decisioning",
+                "Activation & retention agents",
+                "Multi-channel (push · email · SMS · in-app)",
+                "WhatsApp · Telegram bots",
+            ],
+        },
+        {
+            label: "Web3",
+            items: [
+                "EVM · Hardhat",
+                "ERC-4337",
+                "EIP-712",
+                "ERC-721 · ERC-1271",
+                "Uniswap V3 · Stargate",
+                "Solana · SPL",
+                "Jito · Raydium · Orca",
+                "Stacks",
+            ],
+        },
+        {
+            label: "Reliability & infra",
+            items: [
+                "Read-replica routing",
+                "Redis circuit breakers",
+                "Prometheus",
+                "Sentry",
+                "H3 geospatial",
+                "Azure Blob",
+                "Cloudinary",
+                "Vercel",
+            ],
+        },
+    ] satisfies SkillGroup[],
     sidebarLinks: [
         { label: "github.com/kawojue", href: "https://github.com/kawojue" },
         {
@@ -146,7 +358,13 @@ export const portfolio = {
         },
     ] satisfies SocialLink[],
     nav: [
-        { id: "about", label: "about.md", href: "#about", kind: "file" },
+        {
+            id: "about",
+            label: "about.md",
+            href: "#about",
+            kind: "file",
+            hint: "intro",
+        },
         {
             id: "projects",
             label: "projects/",
@@ -159,6 +377,7 @@ export const portfolio = {
             href: "#waysdrop",
             kind: "file",
             indent: true,
+            hint: "case study",
         },
         {
             id: "opsettle",
@@ -166,6 +385,7 @@ export const portfolio = {
             href: "#opsettle",
             kind: "file",
             indent: true,
+            hint: "case study",
         },
         {
             id: "fixorflex",
@@ -173,6 +393,7 @@ export const portfolio = {
             href: "#fixorflex",
             kind: "file",
             indent: true,
+            hint: "case study",
         },
         {
             id: "ojah",
@@ -180,58 +401,72 @@ export const portfolio = {
             href: "#ojah",
             kind: "file",
             indent: true,
+            hint: "case study",
         },
         {
-            id: "videswap",
-            label: "videswap.md",
-            href: "#videswap",
+            id: "more-work",
+            label: "more-work.md",
+            href: "#more-work",
             kind: "file",
             indent: true,
+            hint: "7 more systems",
         },
         {
-            id: "stedshop",
-            label: "stedshop.md",
-            href: "#stedshop",
+            id: "experience",
+            label: "experience.md",
+            href: "#experience",
             kind: "file",
-            indent: true,
+            hint: "timeline",
         },
         {
-            id: "memegoat",
-            label: "memegoat-game.md",
-            href: "#memegoat",
+            id: "skills",
+            label: "skills.md",
+            href: "#skills",
             kind: "file",
-            indent: true,
+            hint: "stack",
         },
         {
-            id: "talentsphere",
-            label: "talentsphere.md",
-            href: "#talentsphere",
+            id: "contact",
+            label: "contact.md",
+            href: "#contact",
             kind: "file",
-            indent: true,
+            hint: "reach out",
         },
         {
-            id: "metadawgs",
-            label: "metadawgs.md",
-            href: "#metadawgs",
+            id: "resume",
+            label: "resume.pdf",
+            href: "/resume",
             kind: "file",
-            indent: true,
+            hint: "print view",
         },
-        {
-            id: "amopedia",
-            label: "amopedia.md",
-            href: "#amopedia",
-            kind: "file",
-            indent: true,
-        },
-        {
-            id: "omega-loan",
-            label: "omega-loan.md",
-            href: "#omega-loan",
-            kind: "file",
-            indent: true,
-        },
-        { id: "contact", label: "contact.md", href: "#contact", kind: "file" },
     ] satisfies NavItem[],
+    primaryNav: [
+        { id: "about", label: "about", href: "#about", sectionIds: ["about"] },
+        {
+            id: "work",
+            label: "work",
+            href: "#waysdrop",
+            sectionIds: ["waysdrop", "opsettle", "fixorflex", "ojah", "more-work"],
+        },
+        {
+            id: "experience",
+            label: "experience",
+            href: "#experience",
+            sectionIds: ["experience"],
+        },
+        {
+            id: "skills",
+            label: "skills",
+            href: "#skills",
+            sectionIds: ["skills"],
+        },
+        {
+            id: "contact",
+            label: "contact",
+            href: "#contact",
+            sectionIds: ["contact"],
+        },
+    ] satisfies PrimaryNavItem[],
     projects: [
         {
             id: "waysdrop",
@@ -240,11 +475,30 @@ export const portfolio = {
             status: "production",
             statusLabel: "● in production",
             flagship: true,
+            summary:
+                "Logistics and commerce backend: support, notification, and retention agents, H3 matching, multi-rail wallets.",
             description:
-                "Large-scale logistics and commerce platform (users, couriers, stores, admin, agents). Built and deployed the entire backend infrastructure from early MVP to production, across a ~2M-line codebase I've read, shipped, and operated in prod: AI support chat (Claude/Qwen, 80+ tools, WhatsApp/Telegram), H3 geospatial courier matching, multi-rail wallet infrastructure (Paystack, Flutterwave, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
-            role: "head of engineering",
+                "Logistics and commerce platform serving users, couriers, stores, admins, and agents. I took the backend from early MVP to production as lead backend, then Head of Engineering, and now CTO and co-founder. The AI layer is a fleet, not a chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that: a ~2M-line codebase, H3 geospatial courier matching, multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
+            role: "cto · co-founder",
             stack: "nestjs · postgres · redis · bullmq · claude · qwen",
             site: "https://waysdrop.com",
+            systems: [
+                {
+                    name: "Support agent",
+                    summary:
+                        "Claude/Qwen ops agent with 80+ tools on WhatsApp and Telegram. Users and staff prompt it; it executes across the platform.",
+                },
+                {
+                    name: "Notification agent",
+                    summary:
+                        "Decision agent that picks channel, timing, and copy: push, email, SMS, or in-app. New products, cart reminders, nearby stores, holiday greetings, and the rest of the lifecycle.",
+                },
+                {
+                    name: "Activation & retention agent",
+                    summary:
+                        "Brings abandoned users back. Creates promos, drives sessions, and decides what to say so people who left the app have a reason to open it again.",
+                },
+            ],
             diff: [
                 {
                     type: "rem",
@@ -252,7 +506,19 @@ export const portfolio = {
                 },
                 {
                     type: "add",
-                    text: "+ Claude/Qwen agent with 80+ tools across WhatsApp/Telegram",
+                    text: "+ Claude/Qwen support agent with 80+ tools across WhatsApp/Telegram",
+                },
+                {
+                    type: "rem",
+                    text: "- blast campaigns on a cron, same message to everyone",
+                },
+                {
+                    type: "add",
+                    text: "+ decision agent picks push, email, SMS, or in-app per user",
+                },
+                {
+                    type: "add",
+                    text: "+ activation/retention agent: promos, cart, geo, holiday triggers",
                 },
                 {
                     type: "rem",
@@ -275,8 +541,10 @@ export const portfolio = {
             status: "wip",
             statusLabel: "● in progress",
             flagship: true,
+            summary:
+                "Programmable payments protocol: Solidity escrow, subscriptions, ERC-4337, cross-chain swaps, NestJS rails.",
             description:
-                "Full payment infrastructure protocol spanning smart contracts, NestJS backend, and DevOps. Co-founded and built from zero: programmable payments, escrow, subscriptions, split payments, cross-chain swaps, virtual wallets, EIP-712 signatures, ERC-4337 account abstraction, WebSocket subsystem, and webhook management with retry/replay.",
+                "Payment infrastructure protocol spanning smart contracts, a NestJS backend, and the DevOps around both. Co-founded and built from zero: programmable payments, escrow, subscriptions, split payments, cross-chain swaps, virtual wallets, EIP-712 signatures, ERC-4337 account abstraction, a WebSocket subsystem, and webhook delivery with retry and replay.",
             role: "co-founder · lead eng",
             stack: "solidity · hardhat · nestjs · postgres",
             diff: [
@@ -300,8 +568,11 @@ export const portfolio = {
             name: "FixOrFlex",
             status: "production",
             statusLabel: "● in production",
+            flagship: true,
+            summary:
+                "Two-sided services marketplace: Paystack escrow, concurrency-safe withdrawals, SSE discovery, KYC, 2FA.",
             description:
-                "Two-sided services marketplace (clients vs professionals). Architected and delivered the backend from scratch: full job lifecycle, escrow-based payments with Paystack (charges, transfers, webhooks), concurrency-safe wallet withdrawals, SSE job discovery with relevance ranking, in-app chat, KYC gating (NIN/CAC), and TOTP 2FA.",
+                "Two-sided services marketplace connecting clients with professionals. As CTO I architected and delivered the backend from scratch: the full job lifecycle, escrow-based payments on Paystack (charges, transfers, webhooks), concurrency-safe wallet withdrawals, SSE job discovery with relevance ranking, in-app chat, KYC gating (NIN/CAC), and TOTP 2FA.",
             role: "cto",
             stack: "nestjs · postgres · paystack · redis",
             site: "https://fixorflex.com",
@@ -327,8 +598,10 @@ export const portfolio = {
             status: "production",
             statusLabel: "● in production",
             flagship: true,
+            summary:
+                "Cross-border marketplace on Payshiga rails: live FX, vendor-split checkout, dual logistics, signed webhooks.",
             description:
-                "Cross-border e-commerce marketplace built on Payshiga's payment and wallet rails. Led product and backend: multi-vendor catalog with HS customs codes, vendor-split checkout with live FX from Payshiga quotes, dual logistics providers (Shiip and Topship), HMAC-signed vendor sync from Payshiga business webhooks, and payment confirmation via Payshiga charge events queued through Bull.",
+                "Cross-border e-commerce marketplace built on Payshiga's payment and wallet rails. I led product and backend: a multi-vendor catalog with HS customs codes, vendor-split checkout priced with live FX from Payshiga quotes, dual logistics providers (Shiip and Topship), HMAC-signed vendor sync from Payshiga business webhooks, and payment confirmation from Payshiga charge events queued through Bull.",
             role: "product lead · backend eng",
             stack: "nestjs · postgres · redis · payshiga",
             site: "https://ojah.shop",
@@ -354,6 +627,8 @@ export const portfolio = {
             name: "VideSwap",
             status: "maintained",
             statusLabel: "● maintained",
+            summary:
+                "DEX aggregator across 5+ EVM chains with ERC-721 revenue sharing and a NestJS quote/indexing backend.",
             description:
                 "DEX aggregator smart contract with multi-source swaps across 5+ EVM chains (Ethereum, Optimism, Base, Arbitrum, BSC, Polygon, Monad). Built ShareholderPass ERC-721 with referral rewards, USDC revenue sharing with ERC-1271 signatures, and NestJS backend for quote aggregation, trade indexing, and XP leaderboards.",
             role: "co-founder · lead eng",
@@ -400,6 +675,8 @@ export const portfolio = {
             name: "StedShop",
             status: "production",
             statusLabel: "● in production",
+            summary:
+                "Nigerian e-commerce backend: Paystack checkout, full-text search, delivery-gated returns and refunds.",
             description:
                 "Live Nigerian e-commerce store backend, built freelance. Full product catalog with three-level categories, variants, and Postgres full-text search; server-side cart and checkout with Paystack; and an end-to-end returns and refunds pipeline with delivery-gated return windows, refund-vs-exchange logic, and Paystack refund API integration with webhook confirmation.",
             role: "backend engineer · freelance",
@@ -426,6 +703,8 @@ export const portfolio = {
             name: "MemeGoat Game",
             status: "sunset",
             statusLabel: "● sunset",
+            summary:
+                "Real-time casino and sportsbook server on Stacks: wallet auth, WebSocket games, automated STX payouts.",
             description:
                 "Real-time backend for MemeGoat's on-chain casino and sportsbook on Stacks (Bitcoin L2). Launched on production domains, later shut down. Wallet-signature auth, live multiplayer games over WebSockets (Dice, BlackJack, Roulette, and more), ticket/tournament economy, NFL sportsbook with async settlement, and automated STX payouts broadcast from a backend-held wallet when tournaments closed.",
             role: "backend engineer",
@@ -452,6 +731,8 @@ export const portfolio = {
             name: "TalentSphere Africa",
             status: "production",
             statusLabel: "● in production",
+            summary:
+                "Creative booking marketplace: e-signed contracts, OTP-gated Paystack payouts, Socket.io chat.",
             description:
                 "Talent and creative booking marketplace for Africa's creative industry. Built roughly 70% of the backend before departure: casting briefs and production projects, project-based hiring with e-signed contracts, OTP-gated Paystack wallet payouts, real-time chat over Socket.io, and a parallel job board alongside direct booking flows.",
             role: "backend engineer",
@@ -478,6 +759,8 @@ export const portfolio = {
             name: "Metadawgs",
             status: "maintained",
             statusLabel: "● maintained",
+            summary:
+                "Five NestJS services for a Solana ecosystem: presale, trading terminal, SocialFi, moderation, growth.",
             description:
                 "Solana-based meme/trading ecosystem with a live Telegram community. As co-founder and backend engineer, I owned five NestJS services covering token launch, trading, social quests, moderation, and growth. Real SOL, SPL tokens, and community trust all riding on backend correctness.",
             role: "co-founder · backend eng",
@@ -535,6 +818,8 @@ export const portfolio = {
             name: "Amopedia",
             status: "production",
             statusLabel: "● in production",
+            summary:
+                "Multi-tenant radiology RIS: DICOM parsing, Azure Blob storage, role-scoped practitioner access.",
             description:
                 "Multi-tenant radiology imaging platform (PACS-adjacent RIS), built freelance in 2023. Patient studies with real clinical metadata (modality, CPT codes, priority, reporting status), DICOM parsing and Azure Blob storage, role-based practitioner access, and a platform-level Adspec super-admin layer over independent imaging centers.",
             role: "backend engineer · freelance",
@@ -561,6 +846,8 @@ export const portfolio = {
             name: "Omega Loan",
             status: "production",
             statusLabel: "● in production",
+            summary:
+                "Microfinance loan backend shipped in under 24 hours: KYC, repayment schedules, Excel exports.",
             description:
                 "Microfinance loan management backend, built and shipped for a client in under 24 hours (for real). Customer and guarantor KYC with Cloudinary document uploads, loan applications (Salary Loan, Asset Financing, SME) with auto-generated repayment schedules, role-scoped moderator/admin access, and Excel portfolio exports via ExcelJS.",
             role: "backend engineer · freelance",
@@ -593,13 +880,33 @@ export const portfolio = {
 } as const;
 
 export const sectionIds = portfolio.nav
-    .filter((item) => item.kind === "file")
+    .filter((item) => item.kind === "file" && item.href.startsWith("#"))
     .map((item) => item.id);
+
+export const featuredProjects = portfolio.projects.filter(
+    (project) => project.flagship,
+);
+
+export const moreProjects = portfolio.projects.filter(
+    (project) => !project.flagship,
+);
 
 export const systemsInProduction = portfolio.projects.filter(
     (project) =>
         project.status === "production" || project.status === "maintained",
 ).length;
+
+export function primaryNavIdFor(sectionId: string) {
+    return (
+        portfolio.primaryNav.find((item) =>
+            item.sectionIds.includes(sectionId),
+        )?.id ?? portfolio.primaryNav[0].id
+    );
+}
+
+export function isExternalHref(href: string) {
+    return /^https?:\/\//.test(href);
+}
 
 export const consoleEasterEgg =
     "%cif you're reading this from devtools, we'd probably get along.";

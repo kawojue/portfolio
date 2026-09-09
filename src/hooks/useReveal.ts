@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
+export type RevealState = "pending" | "hidden" | "visible";
+
 export function useReveal<T extends HTMLElement = HTMLElement>(
     rootMargin = "0px 0px -8% 0px",
 ) {
     const ref = useRef<T | null>(null);
-    const [visible, setVisible] = useState(false);
+    const [state, setState] = useState<RevealState>("pending");
 
     useEffect(() => {
         const node = ref.current;
@@ -13,16 +15,23 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
         }
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            setVisible(true);
+            setState("visible");
             return;
         }
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry?.isIntersecting) {
-                    setVisible(true);
-                    observer.disconnect();
+                if (!entry) {
+                    return;
                 }
+
+                if (entry.isIntersecting) {
+                    setState("visible");
+                    observer.disconnect();
+                    return;
+                }
+
+                setState("hidden");
             },
             { rootMargin, threshold: 0.12 },
         );
@@ -31,5 +40,5 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
         return () => observer.disconnect();
     }, [rootMargin]);
 
-    return { ref, visible };
+    return { ref, state };
 }

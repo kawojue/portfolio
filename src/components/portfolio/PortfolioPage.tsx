@@ -1,12 +1,15 @@
-import { portfolio, sectionIds } from "#/data/portfolio";
+import { featuredProjects, sectionIds } from "#/data/portfolio";
 import {
     AboutSection,
     ContactSection,
 } from "#/components/portfolio/ContentSections";
 import { CommandPalette } from "#/components/portfolio/CommandPalette";
 import { ConsoleEasterEgg } from "#/components/portfolio/ConsoleEasterEgg";
+import { ExperienceSection } from "#/components/portfolio/ExperienceSection";
+import { MoreWorkSection } from "#/components/portfolio/MoreWorkSection";
 import { ProjectPanel } from "#/components/portfolio/ProjectPanel";
 import { Sidebar } from "#/components/portfolio/Sidebar";
+import { SkillsSection } from "#/components/portfolio/SkillsSection";
 import { StatusBar } from "#/components/portfolio/StatusBar";
 import { useActiveSection } from "#/hooks/useActiveSection";
 
@@ -22,18 +25,21 @@ export function PortfolioPage() {
                 Skip to content
             </a>
 
-            <div className="mx-auto grid min-h-screen max-w-[1180px] grid-cols-1 min-[821px]:grid-cols-[260px_1fr]">
+            <div className="mx-auto grid min-h-screen max-w-[1180px] grid-cols-1 pb-[calc(26px+env(safe-area-inset-bottom,0px))] min-[821px]:grid-cols-[260px_1fr]">
                 <Sidebar activeId={activeId} />
 
                 <main className="min-w-0 px-4 py-8 pb-20 sm:px-6 sm:py-10 min-[821px]:px-10 min-[821px]:py-11">
                     <AboutSection />
 
                     <div>
-                        {portfolio.projects.map((project) => (
+                        {featuredProjects.map((project) => (
                             <ProjectPanel key={project.id} project={project} />
                         ))}
                     </div>
 
+                    <MoreWorkSection />
+                    <ExperienceSection />
+                    <SkillsSection />
                     <ContactSection />
                 </main>
             </div>

@@ -2,6 +2,9 @@ import { portfolio } from "#/data/portfolio";
 
 const siteUrl = portfolio.site.url;
 
+const fontsHref =
+    "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap";
+
 export function absoluteUrl(path: string) {
     return new URL(path, siteUrl).href;
 }
@@ -15,7 +18,7 @@ export function getPersonJsonLd() {
         alternateName: ["kawojue", "0xkawojue"],
         url: siteUrl,
         image: absoluteUrl(portfolio.site.ogImage),
-        jobTitle: "Senior Backend & Web3 Engineer",
+        jobTitle: "CTO & Co-founder, Senior Software Engineer",
         description: portfolio.meta.description,
         email: "mailto:kawojue08@gmail.com",
         telephone: portfolio.phone.label,
@@ -97,6 +100,32 @@ export function getItemListJsonLd() {
     };
 }
 
+export function getIndexHead() {
+    return {
+        links: [{ rel: "canonical", href: siteUrl }],
+    };
+}
+
+export function getResumeHead() {
+    const title = `${portfolio.headline} - Resume`;
+    const description = `Resume for ${portfolio.headline}: ${portfolio.title}. ${portfolio.valueProp}`;
+    const url = absoluteUrl("/resume");
+
+    return {
+        meta: [
+            { title },
+            { name: "description", content: description },
+            { property: "og:type", content: "profile" },
+            { property: "og:url", content: url },
+            { property: "og:title", content: title },
+            { property: "og:description", content: description },
+            { name: "twitter:title", content: title },
+            { name: "twitter:description", content: description },
+        ],
+        links: [{ rel: "canonical", href: url }],
+    };
+}
+
 export function getRootHead() {
     const title = portfolio.meta.title;
     const description = portfolio.meta.description;
@@ -153,7 +182,6 @@ export function getRootHead() {
             { name: "twitter:image:alt", content: title },
         ],
         links: [
-            { rel: "canonical", href: siteUrl },
             {
                 rel: "describedby",
                 href: absoluteUrl("/llms.txt"),
@@ -183,6 +211,7 @@ export function getRootHead() {
                 href: "https://fonts.gstatic.com",
                 crossOrigin: "anonymous" as const,
             },
+            { rel: "stylesheet", href: fontsHref },
         ],
         scripts: [
             {

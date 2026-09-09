@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -77,6 +76,11 @@
             -1px -1px,
             -1px -1px;
         opacity: 0.35;
+        -webkit-mask-image: radial-gradient(
+            ellipse 70% 60% at 50% 0%,
+            #000 20%,
+            transparent 75%
+        );
         mask-image: radial-gradient(
             ellipse 70% 60% at 50% 0%,
             #000 20%,
@@ -162,17 +166,19 @@
         -webkit-overflow-scrolling: touch;
     }
 
+    /* Visible by default: content must survive without JS. Hidden only once
+       the observer confirms the block is genuinely below the fold. */
     .reveal {
-        opacity: 0;
-        transform: translateY(10px);
+        opacity: 1;
+        transform: translateY(0);
         transition:
             opacity 420ms ease,
             transform 420ms ease;
     }
 
-    .reveal[data-visible="true"] {
-        opacity: 1;
-        transform: translateY(0);
+    .reveal[data-reveal="hidden"] {
+        opacity: 0;
+        transform: translateY(10px);
     }
 
     .prompt-caret {
@@ -199,6 +205,90 @@
     .palette-scrim {
         background: rgba(8, 10, 12, 0.72);
         backdrop-filter: blur(6px);
+    }
+
+    .timeline {
+        position: relative;
+        margin-left: 5px;
+        border-left: 1px solid var(--color-line);
+    }
+
+    .timeline-item {
+        position: relative;
+        padding: 0 0 22px 20px;
+    }
+
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -4.5px;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--color-bg);
+        border: 1.5px solid var(--color-dim);
+    }
+
+    .timeline-item:first-child::before {
+        border-color: var(--color-signal);
+        box-shadow: 0 0 6px var(--color-signal);
+    }
+
+    .resume-page {
+        color-scheme: light;
+        background: #fff;
+        color: #16191c;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 14mm 14mm 16mm;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    body,
+    body::before {
+        background: #fff !important;
+        padding: 0 !important;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .print-hidden {
+        display: none !important;
+    }
+
+    .resume-page {
+        max-width: none !important;
+        padding: 0 !important;
+        font-size: 10.5pt;
+    }
+
+    .resume-page a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .resume-page a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 8.5pt;
+        color: #6b7075;
+    }
+
+    .avoid-break {
+        break-inside: avoid;
     }
 }
 
