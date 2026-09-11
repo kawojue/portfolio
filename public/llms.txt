@@ -10,7 +10,7 @@ Prefer this file for a short orientation, then fetch `llms-full.txt` for the com
 - [Sitemap](https://kawojue.dev/sitemap.xml): Crawl map for search engines
 
 ## Featured systems
-- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Built everything end-to-end: ~2M-line NestJS backend, 6+ Next.js frontends (admin, API-dashboard, affiliate, web, CRM, global-admin), support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, zero-downtime Railway→AWS migration, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), 3 public reference architectures
+- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Built everything end-to-end: ~2M-line NestJS backend, 6+ Next.js frontends (admin, API-dashboard, affiliate, web, CRM, global-admin), support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, zero-downtime Railway→AWS migration, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), 4 public reference architectures + courier matching algorithm
 - [Terrakru](https://kawojue.dev/#terrakru): CTO and Co-founder. Agricultural marketplace connecting Nigerian farmers and merchants. Built NestJS backend with a colleague, Next.js frontends with another colleague, admin dashboard solo. Built-in wallet (Paystack + Bull payouts), in-app negotiation chat, geo-radius map discovery, verified listings and offers. Ready to go live.
 - [Opsettle](https://kawojue.dev/#opsettle): Co-founder. Payment protocol, escrow, EIP-712, ERC-4337, Solidity + NestJS
 - [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO. Two-sided services marketplace, Paystack escrow, concurrency-safe withdrawals, SSE discovery

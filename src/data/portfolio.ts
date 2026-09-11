@@ -541,14 +541,14 @@ export const portfolio = {
             site: "https://waysdrop.com",
             systems: [
                 {
-                    name: "Frontend apps × 6+",
-                    summary:
-                        "Built and shipped 6+ production frontends: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin — plus partner portals — all deployed to AWS Amplify.",
-                },
-                {
                     name: "Platform server (entire codebase)",
                     summary:
                         "The ~2M-line NestJS monorepo I built end-to-end: services, domain models, auth, payments, matching, queues, WebSockets, webhooks, audit, and every internal API the frontends and SDKs call.",
+                },
+                {
+                    name: "Frontend apps × 6+",
+                    summary:
+                        "Contributed to 6+ production web frontends: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin — plus partner portals — all deployed to AWS Amplify.",
                 },
                 {
                     name: "Support agent",
@@ -575,6 +575,12 @@ export const portfolio = {
                     repo: "https://github.com/kawojue/waysdrop-location-architecture",
                     summary:
                         "Reference architecture and writeup for Waysdrop's geospatial location service: H3 courier matching, geofencing, real-time tracking, and high-throughput location ingestion on AWS.",
+                },
+                {
+                    name: "Courier matching algorithm",
+                    repo: "https://github.com/kawojue/waysdrop-courier-matching-algorithm",
+                    summary:
+                        "Multi-stage reactive pipeline for assigning deliveries to couriers: H3 res-7 spatial pre-filter on Redis SETs, parallel fleet/promotion/route matching via forkJoin, 3 allocation strategies (SEND_TO_ALL / NEAREST_ALL / NEAREST_ONE_BY_ONE), eligibility filters (decline cooldown, request caps, collection favorites), and Bull worker scheduling with 8 sequential stages from data prep through push notification dispatch.",
                 },
                 {
                     name: "HTTP logger architecture",
