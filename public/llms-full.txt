@@ -1,6 +1,6 @@
 # Raheem Kawojue - Full Portfolio Corpus
 
-> Senior backend, AI agents, Web3, and AWS/cloud engineer. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Open to remote worldwide · based in Lagos, Nigeria.
+> Senior backend, AI agents, Web3, and AWS/cloud engineer. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 4 payment rails, and a zero-downtime Railway->AWS migration. Open to remote worldwide · based in Lagos, Nigeria.
 
 Source of truth: https://kawojue.dev/
 Resume: https://kawojue.dev/resume
@@ -11,16 +11,16 @@ Last updated: 2026-09-11
 
 Raheem Kawojue (also: kawojue, 0xkawojue) is a senior NestJS/TypeScript + Next.js full-stack engineer specializing in AI agents with LLM tool-calling, notification and retention agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, zero-downtime cloud migrations (Railway → AWS), distributed systems, agritech marketplaces, and EVM/Solana smart contracts.
 
-I take payments, AI agents, and real-time systems from zero to production on TypeScript/NestJS, build the frontends and admin tooling they need to ship, and keep them running when real money is on the line.
+I take payment systems, AI agents, and real-time infra from zero to production — and keep them running with real money on the line.
 
-Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS, and EVM when it belongs on-chain. CTO and co-founder at Waysdrop (built everything end-to-end: server, 6+ frontends, AWS migration, SDKs, architectures) after leading backend, then engineering. CTO and co-founder at Terrakru, an agricultural marketplace connecting Nigerian farmers and merchants. Co-founder of Opsettle. Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Nomba, and Stripe across production platforms.
+Built and own Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, and 4 payment rails. Led its zero-downtime Railway to AWS migration across RDS, EC2, ElastiCache, Lambda, Amplify, CloudFront, and the rest of the stack. Also CTO and co-founder at Terrakru, co-founder at Opsettle, and shipped production backends for 9+ companies since 2023.
 
 Availability: Open to senior roles · remote-first · Lagos (WAT, UTC+1)
 
 Highlights:
 - 3 production AI agents: support, notify, retain
 - 4 payment rails shipped to prod
-- 5+ EVM chains aggregated
+- 9+ production backends shipped since 2023
 - 0 downtime Railway → AWS migration at Waysdrop
 - ~2M lines of backend operated in prod
 
@@ -138,7 +138,7 @@ CTO and co-founder of an agricultural commerce marketplace connecting farmers an
 - Period: 2025 - present
 - Project: https://kawojue.dev/#opsettle
 
-Building a programmable payments protocol from zero: Solidity contracts for escrow, subscriptions, and settlement, ERC-4337 account abstraction, and the NestJS rails around them.
+Building crypto payment infrastructure from zero: merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited non-custodial settlement layer across Base, Polygon, Arbitrum, Optimism, and BNB.
 
 ### CTO · FixOrFlex
 - Period: 2025
@@ -189,6 +189,7 @@ Reliability & infra: AWS (EC2 · RDS · ElastiCache · Lambda · Load Balancers 
 - Role: built everything · cto · co-founder
 - Stack: nestjs · postgres · redis · bullmq · claude · qwen · aws · amplify · ec2 · rds · elasticache · react · sdk ×6
 - Site: https://waysdrop.com
+- Architecture diagram: https://kawojue.dev/waysdrop_architecture.svg
 
 Logistics and commerce platform serving users, couriers, stores, admins, and agents. I built the whole thing end-to-end — server, every frontend, SDKs, architectures, infrastructure — from early MVP through production to scaling as lead backend, then Head of Engineering, and now CTO and co-founder. The frontend fleet is 6+ production apps: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin, plus partner portals and mobile wrappers for a total of 9 Amplify deployments. Led zero-downtime migration of all servers and databases from Railway to AWS: 4 RDS instances, 3 EC2 with 2 Elastic IPs, 2 Load Balancers, ElastiCache for caching, 2 Lambda functions with EventBridge Schedulers, 9 Amplify deployments, 2 ECRs, 2 CloudFront distributions, S3 for storage, 2 Secrets Managers, SES for email, and 2 WAF & Shield layers — everything instrumented with CloudWatch. Published 3 reference architectures on GitHub covering the location service, HTTP logger, and API key gateway, plus a dedicated courier matching algorithm writeup. Authored 6 official platform SDKs in Dart, Node.js, Go, PHP, Rust, and Python so merchant and courier integrations ship in hours, not weeks. The AI layer is a fleet, not a chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that: the courier matching engine (8-stage reactive pipeline, H3 res-7 spatial pre-filter on Redis SETs, parallel fleet/promotion/route forkJoin matching, 3 allocation strategies, Bull repeatable jobs), multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.
 
@@ -243,14 +244,21 @@ Highlights:
 - URL: https://kawojue.dev/#opsettle
 - Status: in progress
 - Role: co-founder · lead eng
-- Stack: solidity · hardhat · nestjs · postgres
+- Stack: solidity · hardhat · nestjs · postgres · multi-chain (Base, Polygon, Arbitrum, Optimism, BNB)
+- Architecture diagram: https://kawojue.dev/crypto_payment_platform_architecture.svg
 
-Payment infrastructure protocol spanning smart contracts, a NestJS backend, and the DevOps around both. Co-founded and built from zero: programmable payments, escrow, subscriptions, split payments, cross-chain swaps, virtual wallets, EIP-712 signatures, ERC-4337 account abstraction, a WebSocket subsystem, and webhook delivery with retry and replay.
+Crypto payment infrastructure — Stripe for stablecoins. Co-founded and built from zero: a merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited smart-contract settlement layer across five EVM chains: Base, Polygon, Arbitrum, Optimism, and BNB. The contract layer covers direct and relayed checkout, no-wallet deposit addresses, reusable customer wallets, escrow with dispute resolution, ERC-20 subscriptions, programmable payments like vesting, timelocks, and threshold triggers, donation campaigns, and cross-chain swaps — all fee-metered through a central token registry with oracle safety checks. Deterministic CREATE2 factories give merchants and customers the same wallet address on every supported chain. Non-custodial throughout: funds settle directly to merchant wallets; Opsettle never holds them.
+
+Systems:
+- Merchant dashboard & gasless checkout: merchant-facing dashboard plus hosted checkout for links, invoices, customers, and gasless payment flows on supported wallets
+- NestJS payment orchestration: payment intents, ledgering, webhook delivery with retry/replay, relayer coordination, and merchant-facing APIs
+- Settlement contract suite: TokenRegistry · MerchantRegistry · PaymentSettlement · PayoutRouter · Escrow · SubscriptionManager · ProgrammablePayments
+- Identity, wallets & execution: EIP-712 merchant consent · ERC-4337 account abstraction · deterministic CREATE2 wallets · no-wallet deposit addresses · cross-chain swap routing
 
 Highlights:
-- TokenRegistry, PaymentSettlement, Escrow, SubscriptionManager
-- EIP-712 typed signatures + ERC-4337 account abstraction
-- SwapRouter with UniswapV3 / Stargate adapters + NestJS modules
+- TokenRegistry, MerchantRegistry, PaymentSettlement, PayoutRouter
+- Escrow, SubscriptionManager, ProgrammablePayments, cross-chain swap routing
+- EIP-712 merchant consent + ERC-4337 account abstraction
 
 ### FixOrFlex
 - URL: https://kawojue.dev/#fixorflex

@@ -12,6 +12,12 @@ export type ProjectSystem = {
     repo?: string;
 };
 
+export type ProjectDiagram = {
+    src: string;
+    alt: string;
+    caption?: string;
+};
+
 export type Project = {
     id: string;
     fileName: string;
@@ -26,6 +32,7 @@ export type Project = {
     repo?: string;
     site?: string;
     companySite?: string;
+    diagram?: ProjectDiagram;
     systems?: ProjectSystem[];
     diff?: DiffLine[];
 };
@@ -79,7 +86,7 @@ export const portfolio = {
     meta: {
         title: "Raheem Kawojue | Senior Backend, AI Agents, Web3 & AWS Engineer",
         description:
-            "Raheem Kawojue — CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 AI agent fleets, 4+ payment rails (Paystack, Nomba, Stripe), zero-downtime Railway→AWS migration, and the H3 courier matching engine. Open to senior remote roles worldwide.",
+            "Raheem Kawojue — CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 4 payment rails, zero-downtime Railway->AWS migration, and the H3 courier matching engine. Open to senior remote roles worldwide.",
     },
     site: {
         url: "https://kawojue.dev",
@@ -169,8 +176,8 @@ export const portfolio = {
     title: "Senior Backend Engineer · AI Agents · Payments · Web3",
     punch: "CTO & Co-founder @ Waysdrop · Building Opsettle",
     valueProp:
-        "I take payments, AI agents, and real-time systems from zero to production on TypeScript/NestJS, then keep them running when real money is on the line.",
-    lede: "Reputedly cracked at backends that handle real money. 0→1 on payments, AI agents, and real-time infra on TypeScript/NestJS, and EVM when it belongs on-chain. CTO and co-founder at Waysdrop after leading backend, then engineering. Led Ojah at Payshiga, previously CTO at FixOrFlex, built VideSwap and MemeGoat's on-chain game server, co-founded Metadawgs, and integrated Paystack, Nomba, and Stripe across production platforms.",
+        "I take payment systems, AI agents, and real-time infra from zero to production — and keep them running with real money on the line.",
+    lede: "Built and own Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, and 4 payment rails. Led its zero-downtime Railway to AWS migration across RDS, EC2, ElastiCache, Lambda, Amplify, CloudFront, and the rest of the stack. Also CTO and co-founder at Terrakru, co-founder at Opsettle, and shipped production backends for 9+ companies since 2023.",
     availability: "Open to senior roles · remote-first · Lagos (WAT, UTC+1)",
     tags: [
         "AI agents · support · notify · retain",
@@ -182,7 +189,7 @@ export const portfolio = {
     highlights: [
         { value: "3", label: "production AI agents: support, notify, retain" },
         { value: "4", label: "payment rails shipped to prod" },
-        { value: "5+", label: "EVM chains aggregated" },
+        { value: "9+", label: "production backends shipped since 2023" },
         { value: "0", label: "downtime Railway → AWS migration at Waysdrop" },
         { value: "~2M", label: "lines of backend operated in prod" },
     ] satisfies Highlight[],
@@ -260,7 +267,7 @@ export const portfolio = {
             org: "Opsettle",
             period: "2025 - present",
             summary:
-                "Building a programmable payments protocol from zero: Solidity contracts for escrow, subscriptions, and settlement, ERC-4337 account abstraction, and the NestJS rails around them.",
+                "Building crypto payment infrastructure from zero: merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited non-custodial settlement layer across Base, Polygon, Arbitrum, Optimism, and BNB.",
             projectIds: ["opsettle"],
         },
         {
@@ -539,6 +546,12 @@ export const portfolio = {
             role: "built everything · cto · co-founder",
             stack: "nestjs · postgres · redis · bullmq · claude · qwen · aws · amplify · ec2 · rds · elasticache · react · sdk ×6",
             site: "https://waysdrop.com",
+            diagram: {
+                src: "/waysdrop_architecture.svg",
+                alt: "Waysdrop platform architecture diagram showing frontends and SDKs feeding a NestJS backend, AI agents, and AWS infrastructure.",
+                caption:
+                    "Architecture overview: frontends and SDKs feed the NestJS core, which powers the AI agent fleet and runs on AWS infra.",
+            },
             systems: [
                 {
                     name: "Platform server (entire codebase)",
@@ -671,23 +684,51 @@ export const portfolio = {
             statusLabel: "● in progress",
             flagship: true,
             summary:
-                "Programmable payments protocol: Solidity escrow, subscriptions, ERC-4337, cross-chain swaps, NestJS rails.",
+                "Crypto payment infrastructure — Stripe for stablecoins. Gasless checkout, merchant dashboard, and audited settlement contracts across 5 EVM chains.",
             description:
-                "Payment infrastructure protocol spanning smart contracts, a NestJS backend, and the DevOps around both. Co-founded and built from zero: programmable payments, escrow, subscriptions, split payments, cross-chain swaps, virtual wallets, EIP-712 signatures, ERC-4337 account abstraction, a WebSocket subsystem, and webhook delivery with retry and replay.",
+                "Crypto payment infrastructure — Stripe for stablecoins. Co-founded and built from zero: a merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited smart-contract settlement layer across five EVM chains: Base, Polygon, Arbitrum, Optimism, and BNB. The contract layer covers direct and relayed checkout, no-wallet deposit addresses, reusable customer wallets, escrow with dispute resolution, ERC-20 subscriptions, programmable payments like vesting, timelocks, and threshold triggers, donation campaigns, and cross-chain swaps — all fee-metered through a central token registry with oracle safety checks. Deterministic CREATE2 factories give merchants and customers the same wallet address on every supported chain. Non-custodial throughout: funds settle directly to merchant wallets; Opsettle never holds them.",
             role: "co-founder · lead eng",
-            stack: "solidity · hardhat · nestjs · postgres",
+            stack: "solidity · hardhat · nestjs · postgres · multi-chain (Base, Polygon, Arbitrum, Optimism, BNB)",
+            diagram: {
+                src: "/crypto_payment_platform_architecture.svg",
+                alt: "Opsettle crypto payment platform architecture showing access, API orchestration, smart contract settlement, and multi-chain execution layers.",
+                caption:
+                    "Architecture overview: dashboard and checkout feed API orchestration, which drives the non-custodial settlement contracts across five EVM chains.",
+            },
+            systems: [
+                {
+                    name: "Merchant dashboard & gasless checkout",
+                    summary:
+                        "Merchant-facing dashboard plus hosted checkout for links, invoices, customers, and gasless payment flows on any supported wallet.",
+                },
+                {
+                    name: "NestJS payment orchestration",
+                    summary:
+                        "Backend modules for payment intents, ledgering, webhook delivery with retry/replay, relayer coordination, and merchant-facing APIs.",
+                },
+                {
+                    name: "Settlement contract suite",
+                    summary:
+                        "TokenRegistry, MerchantRegistry, PaymentSettlement, PayoutRouter, Escrow, SubscriptionManager, and ProgrammablePayments with oracle-backed fee checks.",
+                },
+                {
+                    name: "Identity, wallets & execution",
+                    summary:
+                        "EIP-712 merchant consent, ERC-4337 account abstraction, deterministic CREATE2 wallets, no-wallet deposit addresses, and cross-chain swap routing.",
+                },
+            ],
             diff: [
                 {
                     type: "add",
-                    text: "+ TokenRegistry, PaymentSettlement, Escrow, SubscriptionManager",
+                    text: "+ TokenRegistry, MerchantRegistry, PaymentSettlement, PayoutRouter",
                 },
                 {
                     type: "add",
-                    text: "+ EIP-712 typed signatures + ERC-4337 account abstraction",
+                    text: "+ Escrow, SubscriptionManager, ProgrammablePayments, cross-chain swap routing",
                 },
                 {
                     type: "add",
-                    text: "+ SwapRouter with UniswapV3 / Stargate adapters + NestJS modules",
+                    text: "+ EIP-712 merchant consent + ERC-4337 account abstraction",
                 },
             ],
         },

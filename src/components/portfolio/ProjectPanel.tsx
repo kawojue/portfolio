@@ -78,12 +78,35 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
 
                 <p
                     className={[
-                        "max-w-[62ch] text-muted",
-                        flagship ? "text-sm" : "text-[13px] leading-relaxed",
+                        "text-muted",
+                        flagship
+                            ? "text-sm leading-relaxed"
+                            : "max-w-[62ch] text-[13px] leading-relaxed",
                     ].join(" ")}
                 >
                     {project.description}
                 </p>
+
+                {project.diagram ? (
+                    <figure
+                        className={[
+                            "overflow-hidden rounded border border-line bg-surface-2/40",
+                            flagship ? "mt-4" : "mt-3",
+                        ].join(" ")}
+                    >
+                        <img
+                            src={project.diagram.src}
+                            alt={project.diagram.alt}
+                            loading="lazy"
+                            className="block w-full"
+                        />
+                        {project.diagram.caption ? (
+                            <figcaption className="border-t border-line px-3 py-2 font-mono text-[11px] text-dim">
+                                {project.diagram.caption}
+                            </figcaption>
+                        ) : null}
+                    </figure>
+                ) : null}
 
                 {project.systems?.length ? (
                     <ul
@@ -97,7 +120,12 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
                                 <div className="mb-1 font-mono text-[13px] font-semibold text-text">
                                     {system.name}
                                 </div>
-                                <p className="max-w-[62ch] text-sm text-muted">
+                                <p
+                                    className={[
+                                        "text-sm text-muted leading-relaxed",
+                                        flagship ? "" : "max-w-[62ch]",
+                                    ].join(" ")}
+                                >
                                     {system.summary}
                                 </p>
                                 {system.repo ? (
