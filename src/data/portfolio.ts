@@ -1,4 +1,5 @@
-export type ProjectStatus = "production" | "maintained" | "wip" | "sunset";
+export type ProjectStatus =
+    "production" | "maintained" | "wip" | "sunset" | "go_live";
 
 export type DiffLine = {
     type: "add" | "rem";
@@ -76,9 +77,9 @@ export type SkillGroup = {
 
 export const portfolio = {
     meta: {
-        title: "Raheem Kawojue | Senior Backend, AI Agents & Web3 Engineer",
+        title: "Raheem Kawojue | Senior Backend, AI Agents, Web3 & AWS Engineer",
         description:
-            "Raheem Kawojue - CTO and Co-founder at Waysdrop, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, and EVM smart contracts. Open to remote roles worldwide.",
+            "Raheem Kawojue — CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, zero-downtime AWS migrations, and EVM smart contracts. Built 6+ Waysdrop frontends, 6 Waysdrop SDKs, and 3 Waysdrop reference architectures. Open to remote roles worldwide.",
     },
     site: {
         url: "https://kawojue.dev",
@@ -86,7 +87,7 @@ export const portfolio = {
         locale: "en_NG",
         twitter: "@0xkawojue",
         ogImage: "/og.jpg",
-        updated: "2026-09-09",
+        updated: "2026-09-11",
         keywords: [
             "Raheem Kawojue",
             "kawojue",
@@ -110,8 +111,23 @@ export const portfolio = {
             "remote NestJS engineer",
             "remote backend engineer",
             "EVM Solana engineer",
+            "AWS engineer",
+            "zero-downtime cloud migration",
+            "Railway to AWS migration",
+            "AWS EC2 RDS ElastiCache Lambda",
+            "WAF Shield CloudFront Amplify",
+            "agriculture tech Nigeria",
+            "agritech marketplace",
+            "Terrakru CTO",
+            "Terrakru co-founder",
+            "agricultural marketplace Nigeria",
+            "farmers merchants platform Nigeria",
+            "Next.js full stack engineer",
+            "Next.js admin dashboard",
             "CTO Waysdrop",
             "Head of Engineering Waysdrop",
+            "Waysdrop SDK",
+            "Dart Node Go PHP Rust Python SDK",
             "Opsettle",
             "Ojah Payshiga",
             "backend engineer Lagos",
@@ -120,6 +136,7 @@ export const portfolio = {
         skills: [
             "NestJS",
             "TypeScript",
+            "Next.js",
             "PostgreSQL",
             "Redis",
             "BullMQ",
@@ -132,6 +149,8 @@ export const portfolio = {
             "Paystack",
             "Nomba",
             "Stripe",
+            "AWS",
+            "zero-downtime cloud migration",
             "Solidity",
             "EVM",
             "Solana",
@@ -140,6 +159,9 @@ export const portfolio = {
             "WebSockets",
             "distributed systems",
             "fintech",
+            "agritech",
+            "agricultural marketplace",
+            "platform SDKs",
         ],
     },
     handle: "kawojue",
@@ -161,10 +183,15 @@ export const portfolio = {
         { value: "3", label: "production AI agents: support, notify, retain" },
         { value: "4", label: "payment rails shipped to prod" },
         { value: "5+", label: "EVM chains aggregated" },
+        { value: "0", label: "downtime Railway → AWS migration at Waysdrop" },
         { value: "~2M", label: "lines of backend operated in prod" },
     ] satisfies Highlight[],
     actions: [
-        { label: "email me", href: "mailto:kawojue08@gmail.com", primary: true },
+        {
+            label: "email me",
+            href: "mailto:kawojue08@gmail.com",
+            primary: true,
+        },
         { label: "linkedin", href: "https://www.linkedin.com/in/kawojue" },
         { label: "resume", href: "/resume" },
     ] satisfies Action[],
@@ -194,7 +221,7 @@ export const portfolio = {
             orgHref: "https://waysdrop.com",
             period: "Sep 2026 - present",
             summary:
-                "Own product and engineering for a logistics and commerce platform in production: the agent fleet (support, notifications, activation/retention), multi-rail wallets, and the ~2M-line backend those systems sit on.",
+                "Built and own the entire platform end-to-end: the ~2M-line NestJS backend, the agent fleet (support, notifications, activation/retention), multi-rail wallets, 6+ frontend apps (admin, API dashboard, affiliate, web, CRM, global-admin), 6 cross-language SDKs, and zero-downtime migration from Railway to AWS across 4 RDS, 3 EC2, 2 Load Balancers, ElastiCache, 9 Amplify deployments, and 2 Lambda/EventBridge schedulers.",
             projectIds: ["waysdrop"],
         },
         {
@@ -204,7 +231,7 @@ export const portfolio = {
             orgHref: "https://waysdrop.com",
             period: "Jan 2026 - Aug 2026",
             summary:
-                "Ran engineering after leading the backend: production AI agents beyond chat, H3 courier matching, 15+ queues, and the reliability work that kept payments and delivery up.",
+                "Ran engineering and built the whole platform end-to-end: production AI agents beyond chat, H3 courier matching, 15+ queues, the admin/API-dashboard/affiliate/web/CRM/global-admin frontends, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), and 3 public reference architectures on GitHub.",
             projectIds: ["waysdrop"],
         },
         {
@@ -214,8 +241,18 @@ export const portfolio = {
             orgHref: "https://waysdrop.com",
             period: "Jan 2025 - Dec 2025",
             summary:
-                "Took the backend from early MVP to production: NestJS services, Paystack/Nomba/Stripe wallet rails, Bull queues, and the first Claude/Qwen support agent with 80+ tools.",
+                "Built the entire platform server from early MVP to production: all NestJS services, Paystack/Nomba/Stripe wallet rails, Bull queues, the first Claude/Qwen support agent with 80+ tools, and the first internal admin and web frontends.",
             projectIds: ["waysdrop"],
+        },
+        {
+            id: "terrakru",
+            role: "CTO & Co-founder",
+            org: "Terrakru",
+            orgHref: "https://terrakru.com",
+            period: "2026 - present",
+            summary:
+                "CTO and co-founder of an agricultural commerce marketplace connecting farmers and merchants across Nigeria. Built the NestJS backend with a colleague, the Next.js frontends with another colleague, and single-handedly delivered the admin dashboard. Secure wallet, Paystack payments, in-app chat, geo-radius discovery via maps, and real-time listings ready for go-live.",
+            projectIds: ["terrakru"],
         },
         {
             id: "opsettle",
@@ -231,7 +268,7 @@ export const portfolio = {
             role: "CTO",
             org: "FixOrFlex",
             orgHref: "https://fixorflex.com",
-            period: "2024 - 2025",
+            period: "2025",
             summary:
                 "Architected and shipped a two-sided services marketplace backend: Paystack escrow, concurrency-safe withdrawals, SSE job discovery, KYC gating, and TOTP 2FA.",
             projectIds: ["fixorflex"],
@@ -334,6 +371,11 @@ export const portfolio = {
         {
             label: "Reliability & infra",
             items: [
+                "AWS: EC2 · RDS · ElastiCache · Lambda",
+                "AWS: Load Balancers · S3 · CloudFront · SES",
+                "AWS: EventBridge · Secrets Manager · ECR",
+                "AWS: WAF & Shield · Amplify · CloudWatch",
+                "Zero-downtime cloud migrations",
                 "Read-replica routing",
                 "Redis circuit breakers",
                 "Prometheus",
@@ -383,6 +425,14 @@ export const portfolio = {
             id: "opsettle",
             label: "opsettle.md",
             href: "#opsettle",
+            kind: "file",
+            indent: true,
+            hint: "case study",
+        },
+        {
+            id: "terrakru",
+            label: "terrakru.md",
+            href: "#terrakru",
             kind: "file",
             indent: true,
             hint: "case study",
@@ -446,7 +496,14 @@ export const portfolio = {
             id: "work",
             label: "work",
             href: "#waysdrop",
-            sectionIds: ["waysdrop", "opsettle", "fixorflex", "ojah", "more-work"],
+            sectionIds: [
+                "waysdrop",
+                "opsettle",
+                "terrakru",
+                "fixorflex",
+                "ojah",
+                "more-work",
+            ],
         },
         {
             id: "experience",
@@ -476,13 +533,23 @@ export const portfolio = {
             statusLabel: "● in production",
             flagship: true,
             summary:
-                "Logistics and commerce backend: support, notification, and retention agents, H3 matching, multi-rail wallets.",
+                "Built the entire logistics and commerce platform end-to-end: ~2M-line NestJS backend, 6+ frontend apps, AI agent fleet, H3 matching, multi-rail wallets, 6 SDKs, zero-downtime Railway→AWS migration.",
             description:
-                "Logistics and commerce platform serving users, couriers, stores, admins, and agents. I took the backend from early MVP to production as lead backend, then Head of Engineering, and now CTO and co-founder. The AI layer is a fleet, not a chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that: a ~2M-line codebase, H3 geospatial courier matching, multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
-            role: "cto · co-founder",
-            stack: "nestjs · postgres · redis · bullmq · claude · qwen",
+                "Logistics and commerce platform serving users, couriers, stores, admins, and agents. I built the whole thing end-to-end — server, every frontend, SDKs, architectures, infrastructure — from early MVP through production to scaling as lead backend, then Head of Engineering, and now CTO and co-founder. The frontend fleet is 6+ production apps: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin, plus partner portals and mobile wrappers for a total of 9 Amplify deployments. Led zero-downtime migration of all servers and databases from Railway to AWS: 4 RDS instances, 3 EC2 with 2 Elastic IPs, 2 Load Balancers, ElastiCache for caching, 2 Lambda functions with EventBridge Schedulers, 9 Amplify deployments, 2 ECRs, 2 CloudFront distributions, S3 for storage, 2 Secrets Managers, SES for email, and 2 WAF & Shield layers — everything instrumented with CloudWatch. Published 3 reference architectures on GitHub covering the location service, HTTP logger, and API key gateway. Authored 6 official platform SDKs in Dart, Node.js, Go, PHP, Rust, and Python so merchant and courier integrations ship in hours, not weeks. The AI layer is a fleet, not a chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that: H3 geospatial courier matching, multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.",
+            role: "built everything · cto · co-founder",
+            stack: "nestjs · postgres · redis · bullmq · claude · qwen · aws · amplify · ec2 · rds · elasticache · react · sdk ×6",
             site: "https://waysdrop.com",
             systems: [
+                {
+                    name: "Frontend apps × 6+",
+                    summary:
+                        "Built and shipped 6+ production frontends: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin — plus partner portals — all deployed to AWS Amplify.",
+                },
+                {
+                    name: "Platform server (entire codebase)",
+                    summary:
+                        "The ~2M-line NestJS monorepo I built end-to-end: services, domain models, auth, payments, matching, queues, WebSockets, webhooks, audit, and every internal API the frontends and SDKs call.",
+                },
                 {
                     name: "Support agent",
                     summary:
@@ -498,8 +565,64 @@ export const portfolio = {
                     summary:
                         "Brings abandoned users back. Creates promos, drives sessions, and decides what to say so people who left the app have a reason to open it again.",
                 },
+                {
+                    name: "AWS migration (zero downtime)",
+                    summary:
+                        "Full stack migration from Railway to AWS with zero downtime. 4 RDS, 3 EC2 with 2 EIPs, 2 ALBs, ElastiCache, 2 Lambda + EventBridge schedulers, 9 Amplify deployments (all 6+ frontends + portals), 2 ECRs, 2 CloudFront + WAF/Shield, S3, 2 Secrets Managers, SES, CloudWatch across the board.",
+                },
+                {
+                    name: "Location service architecture",
+                    repo: "https://github.com/kawojue/waysdrop-location-architecture",
+                    summary:
+                        "Reference architecture and writeup for Waysdrop's geospatial location service: H3 courier matching, geofencing, real-time tracking, and high-throughput location ingestion on AWS.",
+                },
+                {
+                    name: "HTTP logger architecture",
+                    repo: "https://github.com/kawojue/waysdrop-http-logger-architecture",
+                    summary:
+                        "Reference architecture for Waysdrop's distributed HTTP request logger: structured logging, correlation IDs, log aggregation on CloudWatch, and replayable audit trails across every service boundary.",
+                },
+                {
+                    name: "API key gateway architecture",
+                    repo: "https://github.com/kawojue/waysdrop-api-key-architecture",
+                    summary:
+                        "Reference architecture for Waysdrop's API key gateway: rotation, scoped permissions, rate limiting, audit logging, and SDK integration across all public merchant endpoints.",
+                },
+                {
+                    name: "Platform SDKs × 6",
+                    summary:
+                        "Official SDKs for Waysdrop's public API in Dart, Node.js, Go, PHP, Rust, and Python. Typed clients, auth helpers, retry policies, and release automation so integrations with merchants, couriers, and partners ship in hours instead of weeks.",
+                },
             ],
             diff: [
+                {
+                    type: "rem",
+                    text: "- all servers and databases hosted on Railway, single-region",
+                },
+                {
+                    type: "add",
+                    text: "+ zero-downtime Railway → AWS migration across 4 RDS, 3 EC2, 2 ALBs",
+                },
+                {
+                    type: "add",
+                    text: "+ ElastiCache, 2 Lambda + EventBridge, 9 Amplify deployments, 2 ECRs, S3, 2 Secrets Managers, SES, 2 CloudFront + WAF/Shield — all on CloudWatch",
+                },
+                {
+                    type: "rem",
+                    text: "- no public SDKs; partners wrote raw HTTP integrations",
+                },
+                {
+                    type: "add",
+                    text: "+ 6 official platform SDKs: Dart · Node.js · Go · PHP · Rust · Python",
+                },
+                {
+                    type: "add",
+                    text: "+ 6+ production frontends: admin · API-dashboard · affiliate · web · CRM · global-admin (9 Amplify deployments with portals)",
+                },
+                {
+                    type: "add",
+                    text: "+ 3 public reference architectures: location · HTTP logger · API key gateway",
+                },
                 {
                     type: "rem",
                     text: "- scripted support replies, no ops actions from chat",
@@ -559,6 +682,70 @@ export const portfolio = {
                 {
                     type: "add",
                     text: "+ SwapRouter with UniswapV3 / Stargate adapters + NestJS modules",
+                },
+            ],
+        },
+        {
+            id: "terrakru",
+            fileName: "terrakru.md",
+            name: "Terrakru",
+            status: "go_live",
+            statusLabel: "● ready to go live",
+            flagship: true,
+            summary:
+                "Agricultural marketplace connecting Nigerian farmers and merchants: direct trading, built-in wallet, in-app chat, geo-discovery maps, verified listings.",
+            description:
+                "Agricultural commerce platform connecting farmers and merchants across Nigeria for direct buying and selling of agricultural products with secure transactions and reliable delivery. CTO and co-founder in a three-person founding team. I built the NestJS backend with one colleague, the Next.js customer and merchant frontends with the other colleague, and single-handedly designed and shipped the admin dashboard. Users get a built-in wallet with bank transfers, card payments, and instant payouts via Paystack and Bull-driven payout queues. Farmers and buyers chat directly inside the app to negotiate prices and share product specifications. An interactive map and geo-radius filter lets merchants find produce close to them for efficient sourcing. Real-time listings, price comparison, photo-based produce uploads with pricing, and verified buyer offers round out the full commerce loop — from listing to secure payment to delivery, Terrakru is a complete ecosystem for agricultural commerce in Nigeria.",
+            role: "cto · co-founder · backend (pair) · frontend (pair) · admin dashboard (solo)",
+            stack: "nestjs · nextjs · postgres · redis · bull · paystack · s3 · cloudinary",
+            site: "https://terrakru.com",
+            systems: [
+                {
+                    name: "Built-in wallet & payouts",
+                    summary:
+                        "Secure in-app wallet with bank transfers, card payments via Paystack, and instant merchant payouts queued on Bull.",
+                },
+                {
+                    name: "In-app negotiation chat",
+                    summary:
+                        "Direct chat between farmers and merchants: price negotiation, product spec sharing, and offer counter-signing on listings.",
+                },
+                {
+                    name: "Geo-radius discovery & maps",
+                    summary:
+                        "Interactive map with geo-radius filtering so merchants source produce efficiently by distance and price.",
+                },
+                {
+                    name: "Listings, verified buyers & offers",
+                    summary:
+                        "Farmers list produce with photos and pricing; verified buyers send offers; admins moderate the whole flow.",
+                },
+                {
+                    name: "Admin dashboard",
+                    summary:
+                        "Built solo: user and listing moderation, payout operations, KYC review, dispute resolution, marketplace analytics, and super-admin controls.",
+                },
+            ],
+            diff: [
+                {
+                    type: "rem",
+                    text: "- farmers and merchants find each other offline or via WhatsApp groups",
+                },
+                {
+                    type: "add",
+                    text: "+ verified listings with photos, geo-radius map search, and real-time price comparison across Nigeria",
+                },
+                {
+                    type: "rem",
+                    text: "- payments on bank transfer screenshots, payout handled manually in spreadsheets",
+                },
+                {
+                    type: "add",
+                    text: "+ built-in wallet: Paystack card/bank intake + Bull-queued instant payouts with reconciliation",
+                },
+                {
+                    type: "add",
+                    text: "+ in-app chat for negotiation and spec sharing, plus admin dashboard (built solo) for ops and moderation",
                 },
             ],
         },
@@ -898,9 +1085,8 @@ export const systemsInProduction = portfolio.projects.filter(
 
 export function primaryNavIdFor(sectionId: string) {
     return (
-        portfolio.primaryNav.find((item) =>
-            item.sectionIds.includes(sectionId),
-        )?.id ?? portfolio.primaryNav[0].id
+        portfolio.primaryNav.find((item) => item.sectionIds.includes(sectionId))
+            ?.id ?? portfolio.primaryNav[0].id
     );
 }
 

@@ -41,6 +41,11 @@ export function getPersonJsonLd() {
             },
             {
                 "@type": "Organization",
+                name: "Terrakru",
+                url: "https://terrakru.com",
+            },
+            {
+                "@type": "Organization",
                 name: "Opsettle",
             },
         ],

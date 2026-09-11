@@ -1,5 +1,5 @@
 # Raheem Kawojue
-> Senior backend, AI agents, and Web3 engineer. CTO and Co-founder at Waysdrop, co-founder of Opsettle. NestJS/TypeScript systems for payments, escrow, LLM tool-calling agents, and EVM/Solana contracts. Open to remote worldwide · based in Lagos.
+> Senior backend, AI agents, Web3, and AWS/cloud engineer. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. NestJS/TypeScript + Next.js systems for payments, escrow, LLM tool-calling agents, zero-downtime AWS migrations, agricultural marketplaces, and EVM/Solana contracts. Open to remote worldwide · based in Lagos.
 
 Prefer this file for a short orientation, then fetch `llms-full.txt` for the complete portfolio corpus. The live site is a single-page portfolio at https://kawojue.dev/ with a print-friendly resume at https://kawojue.dev/resume.
 
@@ -10,7 +10,8 @@ Prefer this file for a short orientation, then fetch `llms-full.txt` for the com
 - [Sitemap](https://kawojue.dev/sitemap.xml): Crawl map for search engines
 
 ## Featured systems
-- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Logistics/commerce backend, support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, ~2M-line prod codebase
+- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Built everything end-to-end: ~2M-line NestJS backend, 6+ Next.js frontends (admin, API-dashboard, affiliate, web, CRM, global-admin), support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, zero-downtime Railway→AWS migration, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), 3 public reference architectures
+- [Terrakru](https://kawojue.dev/#terrakru): CTO and Co-founder. Agricultural marketplace connecting Nigerian farmers and merchants. Built NestJS backend with a colleague, Next.js frontends with another colleague, admin dashboard solo. Built-in wallet (Paystack + Bull payouts), in-app negotiation chat, geo-radius map discovery, verified listings and offers. Ready to go live.
 - [Opsettle](https://kawojue.dev/#opsettle): Co-founder. Payment protocol, escrow, EIP-712, ERC-4337, Solidity + NestJS
 - [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO. Two-sided services marketplace, Paystack escrow, concurrency-safe withdrawals, SSE discovery
 - [Ojah](https://kawojue.dev/#ojah): Product/backend lead at Payshiga. Cross-border marketplace, live FX, vendor-split checkout, dual logistics
@@ -26,7 +27,7 @@ Prefer this file for a short orientation, then fetch `llms-full.txt` for the com
 
 ## Sections
 - [Experience](https://kawojue.dev/#experience): Role timeline
-- [Skills](https://kawojue.dev/#skills): Languages, backend, payments, AI, Web3, infra
+- [Skills](https://kawojue.dev/#skills): Languages, backend, payments, AI, Web3, infra including AWS
 - [Contact](https://kawojue.dev/#contact): Hire / collaborate
 
 ## Contact

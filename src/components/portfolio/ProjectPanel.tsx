@@ -21,7 +21,9 @@ export function ProjectPanel({ project }: ProjectPanelProps) {
             ? "text-signal"
             : project.status === "sunset"
               ? "text-dim"
-              : "text-amber";
+              : project.status === "go_live"
+                ? "text-sky-400"
+                : "text-amber";
 
     return (
         <section
