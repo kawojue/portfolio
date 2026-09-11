@@ -79,7 +79,7 @@ export const portfolio = {
     meta: {
         title: "Raheem Kawojue | Senior Backend, AI Agents, Web3 & AWS Engineer",
         description:
-            "Raheem Kawojue — CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Senior NestJS/TypeScript backend engineer for AI agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, zero-downtime AWS migrations, and EVM smart contracts. Built 6+ Waysdrop frontends, 6 Waysdrop SDKs, and 3 Waysdrop reference architectures. Open to remote roles worldwide.",
+            "Raheem Kawojue — CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 AI agent fleets, 4+ payment rails (Paystack, Nomba, Stripe), zero-downtime Railway→AWS migration, and the H3 courier matching engine. Open to senior remote roles worldwide.",
     },
     site: {
         url: "https://kawojue.dev",
