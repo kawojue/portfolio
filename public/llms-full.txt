@@ -1,28 +1,28 @@
 # Raheem Kawojue - Full Portfolio Corpus
 
-> Senior backend, AI agents, Web3, and AWS/cloud engineer. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 4 payment rails, and a zero-downtime Railway->AWS migration. Open to remote worldwide · based in Lagos, Nigeria.
+> Senior backend and platform engineer for payments, commerce, AI agents, and Web3. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~5M-line NestJS backend, 6+ frontends, 6 SDKs, 15+ queues, 4 payment rails, and zero-downtime Railway->AWS migration across 30+ AWS resources. Open to senior, staff, and founding-engineer roles, remote-first from Lagos, Nigeria.
 
 Source of truth: https://kawojue.dev/
 Resume: https://kawojue.dev/resume
 Index: https://kawojue.dev/llms.txt
-Last updated: 2026-09-11
+Last updated: 2026-09-12
 
 ## About
 
-Raheem Kawojue (also: kawojue, 0xkawojue) is a senior NestJS/TypeScript + Next.js full-stack engineer specializing in AI agents with LLM tool-calling, notification and retention agents, payment rails (Paystack, Nomba, Stripe), escrow wallets, zero-downtime cloud migrations (Railway → AWS), distributed systems, agritech marketplaces, and EVM/Solana smart contracts.
+Raheem Kawojue (also: kawojue, 0xkawojue) is a senior backend and platform engineer specializing in payment systems, AI agents, distributed systems, zero-downtime cloud migrations, agritech marketplaces, and EVM/Solana smart contracts.
 
-I take payment systems, AI agents, and real-time infra from zero to production — and keep them running with real money on the line.
+I design and ship backend and platform systems where mistakes are expensive: payments, AI agents, fulfillment, and real-time operations.
 
-Built and own Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, and 4 payment rails. Led its zero-downtime Railway to AWS migration across RDS, EC2, ElastiCache, Lambda, Amplify, CloudFront, and the rest of the stack. Also CTO and co-founder at Terrakru, co-founder at Opsettle, and shipped production backends for 9+ companies since 2023.
+Trusted to own backend architecture for systems that move money, coordinate real-world operations, and stay reliable under load. Built and own Waysdrop end-to-end: ~3M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 15+ queues, and 4 payment rails. Led its zero-downtime Railway -> AWS migration across 30+ AWS resources. Also CTO and co-founder at Terrakru, co-founder at Opsettle, and shipped 9+ production systems since 2023.
 
-Availability: Open to senior roles · remote-first · Lagos (WAT, UTC+1)
+Availability: Open to senior, staff, and founding-engineer roles · remote-first · Lagos (WAT, UTC+1)
 
 Highlights:
-- 3 production AI agents: support, notify, retain
-- 4 payment rails shipped to prod
-- 9+ production backends shipped since 2023
-- 0 downtime Railway → AWS migration at Waysdrop
-- ~2M lines of backend operated in prod
+- 9+ production systems shipped since 2023
+- 4 payment rails owned in production
+- 15+ async queues for delivery, payments, KYC, and webhooks
+- 30+ AWS resources migrated with 0 downtime
+- ~5M lines of backend operated in prod
 
 ### Keywords / search terms
 - NestJS
@@ -102,7 +102,7 @@ Highlights:
 - X: https://x.com/0xkawojue
 - Site: https://kawojue.dev/
 - Resume: https://kawojue.dev/resume
-- Open to: senior backend, full-stack, AI-agent, cloud migrations, distributed systems, and Web3 roles (remote-first)
+- Open to: senior backend, staff backend, platform, founding-engineer, AI infrastructure, distributed systems, and Web3 roles (remote-first)
 
 ## Experience
 
@@ -111,14 +111,14 @@ Highlights:
 - Site: https://waysdrop.com
 - Project: https://kawojue.dev/#waysdrop
 
-Built and own the entire platform end-to-end: the ~2M-line NestJS backend, the agent fleet (support, notifications, activation/retention), multi-rail wallets, 6+ frontend apps (admin, API dashboard, affiliate, web, CRM, global-admin), 6 cross-language SDKs, and zero-downtime migration from Railway to AWS across 4 RDS, 3 EC2, 2 Load Balancers, ElastiCache, 9 Amplify deployments, and 2 Lambda/EventBridge schedulers.
+Own backend and platform architecture for the whole business: the ~5M-line NestJS backend, the agent fleet (support, notifications, activation/retention), multi-rail wallets, 6+ frontend apps (admin, API dashboard, affiliate, web, CRM, global-admin), 6 cross-language SDKs, and zero-downtime migration from Railway to AWS across 30+ resources including 4 RDS, 3 EC2, 2 Load Balancers, ElastiCache, 9 Amplify deployments, and 2 Lambda/EventBridge schedulers.
 
 ### Head of Engineering · Waysdrop
 - Period: Jan 2026 - Aug 2026
 - Site: https://waysdrop.com
 - Project: https://kawojue.dev/#waysdrop
 
-Ran engineering and built the whole platform end-to-end: production AI agents beyond chat, H3 courier matching, 15+ queues, the admin/API-dashboard/affiliate/web/CRM/global-admin frontends, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), and 4 public reference architectures + the courier matching algorithm on GitHub.
+Led engineering for a platform where delivery ops, payment correctness, and AI automation all had to hold up in production: H3 courier matching, 15+ queues, the admin/API-dashboard/affiliate/web/CRM/global-admin frontends, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), and 4 public reference architectures + the courier matching algorithm on GitHub.
 
 ### Lead Backend Engineer · Waysdrop
 - Period: Jan 2025 - Dec 2025
@@ -132,13 +132,13 @@ Built the entire platform server from early MVP to production: all NestJS servic
 - Site: https://terrakru.com
 - Project: https://kawojue.dev/#terrakru
 
-CTO and co-founder of an agricultural commerce marketplace connecting farmers and merchants across Nigeria. Built the NestJS backend with a colleague, the Next.js customer and merchant frontends with another colleague, and single-handedly designed and delivered the admin dashboard. Secure wallet, Paystack payments with Bull-driven payout queues, in-app negotiation chat, geo-radius map discovery, and real-time verified listings ready for go-live.
+CTO and co-founder of a go-live-ready agricultural commerce marketplace connecting farmers and merchants across Nigeria. Owned backend architecture in a three-person founding team, built the NestJS backend with a colleague, paired on the Next.js frontends with another colleague, and single-handedly delivered the admin dashboard. Secure wallet, Paystack payments with Bull-driven payout queues, in-app negotiation chat, geo-radius map discovery, and real-time verified listings ready for launch.
 
 ### Co-founder · Lead Engineer · Opsettle
 - Period: 2025 - present
 - Project: https://kawojue.dev/#opsettle
 
-Building crypto payment infrastructure from zero: merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited non-custodial settlement layer across Base, Polygon, Arbitrum, Optimism, and BNB.
+Building non-custodial stablecoin payment infrastructure from zero: merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited settlement layer across Base, Polygon, Arbitrum, Optimism, and BNB.
 
 ### CTO · FixOrFlex
 - Period: 2025
@@ -191,11 +191,11 @@ Reliability & infra: AWS (EC2 · RDS · ElastiCache · Lambda · Load Balancers 
 - Site: https://waysdrop.com
 - Architecture diagram: https://kawojue.dev/waysdrop_architecture.svg
 
-Logistics and commerce platform serving users, couriers, stores, admins, and agents. I built the whole thing end-to-end — server, every frontend, SDKs, architectures, infrastructure — from early MVP through production to scaling as lead backend, then Head of Engineering, and now CTO and co-founder. The frontend fleet is 6+ production apps: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin, plus partner portals and mobile wrappers for a total of 9 Amplify deployments. Led zero-downtime migration of all servers and databases from Railway to AWS: 4 RDS instances, 3 EC2 with 2 Elastic IPs, 2 Load Balancers, ElastiCache for caching, 2 Lambda functions with EventBridge Schedulers, 9 Amplify deployments, 2 ECRs, 2 CloudFront distributions, S3 for storage, 2 Secrets Managers, SES for email, and 2 WAF & Shield layers — everything instrumented with CloudWatch. Published 3 reference architectures on GitHub covering the location service, HTTP logger, and API key gateway, plus a dedicated courier matching algorithm writeup. Authored 6 official platform SDKs in Dart, Node.js, Go, PHP, Rust, and Python so merchant and courier integrations ship in hours, not weeks. The AI layer is a fleet, not a chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that: the courier matching engine (8-stage reactive pipeline, H3 res-7 spatial pre-filter on Redis SETs, parallel fleet/promotion/route forkJoin matching, 3 allocation strategies, Bull repeatable jobs), multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues for delivery, payments, KYC, and webhooks.
+Logistics and commerce platform where backend correctness, money movement, and real-time operations all matter. I owned the system end-to-end: server, every web frontend, SDKs, architectures, and infrastructure, from early MVP through production scale as lead backend, then Head of Engineering, and now CTO and co-founder. The frontend fleet is 6+ production apps: waysdrop-admin, waysdrop-api-dashboard, waysdrop-affiliate, waysdrop-web, waysdrop-crm, and waysdrop-global-admin, plus partner portals and mobile wrappers for a total of 9 Amplify deployments. Led zero-downtime migration of all servers and databases from Railway to AWS: 4 RDS instances, 3 EC2 with 2 Elastic IPs, 2 Load Balancers, ElastiCache for caching, 2 Lambda functions with EventBridge Schedulers, 9 Amplify deployments, 2 ECRs, 3 CloudFront distributions, S3 for storage, 2 Secrets Managers, SES for email, and 2 WAF & Shield layers, everything instrumented with CloudWatch. Published 3 reference architectures on GitHub covering the location service, HTTP logger, and API key gateway, plus the courier matching algorithm writeup so the engineering decisions are legible, not just claimed. Authored 6 official platform SDKs in Dart, Node.js, Go, PHP, Rust, and Python so merchant and courier integrations ship in hours, not weeks. The AI layer is a production ops surface, not a demo chat box. A Claude/Qwen support agent with 80+ tools runs live on WhatsApp and Telegram and executes ops from a prompt. A notification decision agent chooses when and how to reach someone: push, email, SMS, or in-app, including new products, cart reminders, a nearby store, and holiday greetings. An activation and retention agent creates promos and pulls abandoned users back. Under that sit the courier matching engine (8-stage reactive pipeline, H3 res-7 spatial pre-filter on Redis SETs, parallel fleet/promotion/route forkJoin matching, 3 allocation strategies, Bull repeatable jobs), multi-rail wallets (Paystack, Nomba, Stripe, DVA, escrow), and 15+ Bull queues that keep delivery, payments, KYC, and webhook workloads moving outside request paths.
 
 Systems:
 - Frontend apps × 6+: waysdrop-admin · waysdrop-api-dashboard · waysdrop-affiliate · waysdrop-web · waysdrop-crm · waysdrop-global-admin (plus partner portals) all on AWS Amplify
-- Platform server (entire codebase): the ~2M-line NestJS monorepo built end-to-end — services, domains, auth, payments, matching, queues, WebSockets, webhooks, audit
+- Platform server (entire codebase): the ~5M-line NestJS monorepo built end-to-end — services, domains, auth, payments, matching, queues, WebSockets, webhooks, audit
 - Support agent: Claude/Qwen ops agent with 80+ tools on WhatsApp and Telegram
 - Notification agent: decisioning for push, email, SMS, in-app, cart, geo, holidays
 - Activation & retention agent: promos and win-back for abandoned users
@@ -225,7 +225,7 @@ Highlights:
 - Stack: nestjs · nextjs · postgres · redis · bull · paystack · s3 · cloudinary
 - Site: https://terrakru.com
 
-Agricultural commerce platform connecting farmers and merchants across Nigeria for direct buying and selling of agricultural products with secure transactions and reliable delivery. CTO and co-founder in a three-person founding team. I built the NestJS backend with one colleague, the Next.js customer and merchant frontends with the other colleague, and single-handedly designed and shipped the admin dashboard. Users get a built-in wallet with bank transfers, card payments, and instant payouts via Paystack and Bull-driven payout queues. Farmers and buyers chat directly inside the app to negotiate prices and share product specifications. An interactive map and geo-radius filter lets merchants find produce close to them for efficient sourcing. Real-time listings, price comparison, photo-based produce uploads with pricing, and verified buyer offers round out the full commerce loop — from listing to secure payment to delivery, Terrakru is a complete ecosystem for agricultural commerce in Nigeria.
+Agricultural commerce platform built to move farmers and merchants from offline coordination into a safer, searchable, payment-backed marketplace. As CTO and co-founder in a three-person founding team, I owned backend architecture, built the NestJS backend with one colleague, paired on the Next.js customer and merchant frontends with another colleague, and single-handedly designed and shipped the admin dashboard. Users get a built-in wallet with bank transfers, card payments, and instant payouts via Paystack and Bull-driven payout queues, replacing screenshot-based confirmation with an auditable payout flow. Farmers and buyers chat directly inside the app to negotiate prices and share product specifications. An interactive map and geo-radius filter lets merchants source produce by distance and price. Real-time listings, price comparison, photo-based produce uploads, and verified buyer offers complete the commerce loop from listing to secure payment to delivery.
 
 Systems:
 - Built-in wallet & payouts: secure in-app wallet with Paystack card/bank intake and Bull-queued instant merchant payouts
@@ -247,7 +247,7 @@ Highlights:
 - Stack: solidity · hardhat · nestjs · postgres · multi-chain (Base, Polygon, Arbitrum, Optimism, BNB)
 - Architecture diagram: https://kawojue.dev/crypto_payment_platform_architecture.svg
 
-Crypto payment infrastructure — Stripe for stablecoins. Co-founded and built from zero: a merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited smart-contract settlement layer across five EVM chains: Base, Polygon, Arbitrum, Optimism, and BNB. The contract layer covers direct and relayed checkout, no-wallet deposit addresses, reusable customer wallets, escrow with dispute resolution, ERC-20 subscriptions, programmable payments like vesting, timelocks, and threshold triggers, donation campaigns, and cross-chain swaps — all fee-metered through a central token registry with oracle safety checks. Deterministic CREATE2 factories give merchants and customers the same wallet address on every supported chain. Non-custodial throughout: funds settle directly to merchant wallets; Opsettle never holds them.
+Crypto payment infrastructure built so merchants can accept stablecoins without taking on wallet UX or custody complexity. Co-founded and built from zero: a merchant dashboard and gasless checkout on top of a NestJS API, backed by an audited smart-contract settlement layer across five EVM chains: Base, Polygon, Arbitrum, Optimism, and BNB. The contract layer covers direct and relayed checkout, no-wallet deposit addresses, reusable customer wallets, escrow with dispute resolution, ERC-20 subscriptions, programmable payments like vesting, timelocks, and threshold triggers, donation campaigns, and cross-chain swaps, all fee-metered through a central token registry with oracle safety checks. Deterministic CREATE2 factories give merchants and customers the same wallet address on every supported chain. Non-custodial throughout: funds settle directly to merchant wallets; Opsettle never holds them.
 
 Systems:
 - Merchant dashboard & gasless checkout: merchant-facing dashboard plus hosted checkout for links, invoices, customers, and gasless payment flows on supported wallets

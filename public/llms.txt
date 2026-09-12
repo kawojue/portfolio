@@ -1,5 +1,5 @@
 # Raheem Kawojue
-> Senior backend, AI agents, Web3, and AWS/cloud engineer. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~2M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 4 payment rails, and a zero-downtime Railway->AWS migration. Open to remote worldwide · based in Lagos.
+> Senior backend and platform engineer for payments, commerce, AI agents, and Web3. CTO and Co-founder at Waysdrop and Terrakru, co-founder of Opsettle. Built Waysdrop end-to-end: ~5M-line NestJS backend, 6+ frontends, 6 SDKs, 15+ queues, 4 payment rails, and zero-downtime Railway->AWS migration across 30+ AWS resources. Open to senior, staff, and founding-engineer roles, remote-first from Lagos.
 
 Prefer this file for a short orientation, then fetch `llms-full.txt` for the complete portfolio corpus. The live site is a single-page portfolio at https://kawojue.dev/ with a print-friendly resume at https://kawojue.dev/resume.
 
@@ -10,10 +10,10 @@ Prefer this file for a short orientation, then fetch `llms-full.txt` for the com
 - [Sitemap](https://kawojue.dev/sitemap.xml): Crawl map for search engines
 
 ## Featured systems
-- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Built everything end-to-end: ~2M-line NestJS backend, 6+ Next.js frontends (admin, API-dashboard, affiliate, web, CRM, global-admin), support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, zero-downtime Railway→AWS migration, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), 4 public reference architectures + courier matching algorithm
-- [Terrakru](https://kawojue.dev/#terrakru): CTO and Co-founder. Agricultural marketplace connecting Nigerian farmers and merchants. Built NestJS backend with a colleague, Next.js frontends with another colleague, admin dashboard solo. Built-in wallet (Paystack + Bull payouts), in-app negotiation chat, geo-radius map discovery, verified listings and offers. Ready to go live.
-- [Opsettle](https://kawojue.dev/#opsettle): Co-founder. Crypto payment infrastructure — Stripe for stablecoins. Merchant dashboard, gasless checkout, audited non-custodial settlement contracts across Base, Polygon, Arbitrum, Optimism, and BNB
-- [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO. Two-sided services marketplace, Paystack escrow, concurrency-safe withdrawals, SSE discovery
+- [Waysdrop](https://kawojue.dev/#waysdrop): CTO and Co-founder. Backend and platform ownership for logistics, payments, and AI operations: ~5M-line NestJS backend, 6+ Next.js frontends (admin, API-dashboard, affiliate, web, CRM, global-admin), support + notification + retention agents, multi-rail wallets (Paystack, Nomba, Stripe), 15+ queues, zero-downtime Railway->AWS migration across 30+ AWS resources, 6 SDKs (Dart, Node, Go, PHP, Rust, Python), and 4 public architecture writeups including the courier matching algorithm
+- [Terrakru](https://kawojue.dev/#terrakru): CTO and Co-founder. Go-live-ready agritech marketplace for Nigerian agricultural trade. Owned backend architecture in a three-person founding team, built wallet flows, in-app negotiation chat, geo-radius sourcing, verified listings, and the admin dashboard
+- [Opsettle](https://kawojue.dev/#opsettle): Co-founder. Non-custodial stablecoin payment infrastructure. Merchant dashboard, gasless checkout, and audited settlement contracts across Base, Polygon, Arbitrum, Optimism, and BNB
+- [FixOrFlex](https://kawojue.dev/#fixorflex): Former CTO. Services marketplace backend where escrow, withdrawal correctness, trust, and real-time discovery mattered
 - [Ojah](https://kawojue.dev/#ojah): Product/backend lead at Payshiga. Cross-border marketplace, live FX, vendor-split checkout, dual logistics
 
 ## More work

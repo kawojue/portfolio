@@ -92,7 +92,10 @@ export function AboutSection() {
             >
                 {portfolio.headline}
             </h1>
-            <p className="mb-3.5 font-mono text-[13px] text-signal sm:text-sm">
+            <p className="mb-1 font-mono text-[13px] text-signal sm:text-sm">
+                {portfolio.title}
+            </p>
+            <p className="mb-3.5 font-mono text-[12px] text-dim sm:text-[13px]">
                 {portfolio.punch}
             </p>
             <p className="max-w-[58ch] text-[17px] font-medium leading-snug text-text">

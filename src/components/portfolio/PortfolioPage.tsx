@@ -31,6 +31,23 @@ export function PortfolioPage() {
                 <main className="min-w-0 px-4 py-8 pb-20 sm:px-6 sm:py-10 min-[821px]:px-10 min-[821px]:py-11">
                     <AboutSection />
 
+                    <section
+                        aria-labelledby="selected-systems-heading"
+                        className="mb-8"
+                    >
+                        <h2
+                            id="selected-systems-heading"
+                            className="mb-2 font-mono text-[13px] font-semibold uppercase tracking-[0.08em] text-dim"
+                        >
+                            Selected systems
+                        </h2>
+                        <p className="max-w-[62ch] text-sm text-muted">
+                            Flagship case studies that show backend ownership
+                            across money movement, reliability, AI operations,
+                            and go-to-production delivery.
+                        </p>
+                    </section>
+
                     <div>
                         {featuredProjects.map((project) => (
                             <ProjectPanel key={project.id} project={project} />
