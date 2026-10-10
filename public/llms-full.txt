@@ -13,12 +13,11 @@ Raheem Kawojue (also: kawojue, 0xkawojue) is a senior backend and platform engin
 
 I design and ship backend and platform systems where mistakes are expensive: payments, AI agents, fulfillment, and real-time operations.
 
-Trusted to own backend architecture for systems that move money, coordinate real-world operations, and stay reliable under load. Built and own Waysdrop end-to-end: ~3M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 15+ queues, and 4 payment rails. Led its zero-downtime Railway -> AWS migration across 30+ AWS resources. Also CTO and co-founder at Terrakru, co-founder at Opsettle, and shipped 9+ production systems since 2023.
+Trusted to own backend architecture for systems that move money, coordinate real-world operations, and stay reliable under load. Built and own Waysdrop end-to-end: ~3M-line NestJS backend, 6+ frontends, 6 SDKs, 3 production AI agents, 15+ queues, and 4 payment rails. Led its zero-downtime Railway -> AWS migration across 30+ AWS resources. Also CTO and co-founder at Terrakru, co-founder at Opsettle.
 
 Availability: Open to senior, staff, and founding-engineer roles · remote-first · Lagos (WAT, UTC+1)
 
 Highlights:
-- 9+ production systems shipped since 2023
 - 4 payment rails owned in production
 - 15+ async queues for delivery, payments, KYC, and webhooks
 - 30+ AWS resources migrated with 0 downtime
